@@ -6,7 +6,7 @@
 /*   By: ymanilow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:13:41 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/10/17 11:43:02 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/10/17 13:37:57 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ typedef struct	s_pointers
 }				t_pointers;
 
 int				deal_key(int key, void *param);
-
+void			ft_print_straight_line(int start_x, int start_y, int end_x, int end_y, t_pointers *point);
+void			ft_print_inclined_line(int start_x, int start_y, int end_x, int end_y, t_pointers *point);
 #endif
