@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/FdF.dir/sources/fdf.c.o CMakeFiles/FdF.dir/sources/one_line.c.o CMakeFiles/FdF.dir/ft_printf/libft/ft_mod_num.c.o  -o FdF ../ft_printf/libftprintf.a ../mlx/libmlx.a -lmlx -framework AppKit -framework OpenGL 
