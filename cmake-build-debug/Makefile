@@ -177,6 +177,33 @@ sources/fdf.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/fdf.c.s
 .PHONY : sources/fdf.c.s
 
+sources/list_functions.o: sources/list_functions.c.o
+
+.PHONY : sources/list_functions.o
+
+# target to build an object file
+sources/list_functions.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/list_functions.c.o
+.PHONY : sources/list_functions.c.o
+
+sources/list_functions.i: sources/list_functions.c.i
+
+.PHONY : sources/list_functions.i
+
+# target to preprocess a source file
+sources/list_functions.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/list_functions.c.i
+.PHONY : sources/list_functions.c.i
+
+sources/list_functions.s: sources/list_functions.c.s
+
+.PHONY : sources/list_functions.s
+
+# target to generate assembly for a file
+sources/list_functions.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/list_functions.c.s
+.PHONY : sources/list_functions.c.s
+
 sources/one_line.o: sources/one_line.c.o
 
 .PHONY : sources/one_line.o
@@ -204,6 +231,33 @@ sources/one_line.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/one_line.c.s
 .PHONY : sources/one_line.c.s
 
+sources/parsing.o: sources/parsing.c.o
+
+.PHONY : sources/parsing.o
+
+# target to build an object file
+sources/parsing.c.o:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/parsing.c.o
+.PHONY : sources/parsing.c.o
+
+sources/parsing.i: sources/parsing.c.i
+
+.PHONY : sources/parsing.i
+
+# target to preprocess a source file
+sources/parsing.c.i:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/parsing.c.i
+.PHONY : sources/parsing.c.i
+
+sources/parsing.s: sources/parsing.c.s
+
+.PHONY : sources/parsing.s
+
+# target to generate assembly for a file
+sources/parsing.c.s:
+	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/parsing.c.s
+.PHONY : sources/parsing.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,9 +273,15 @@ help:
 	@echo "... sources/fdf.o"
 	@echo "... sources/fdf.i"
 	@echo "... sources/fdf.s"
+	@echo "... sources/list_functions.o"
+	@echo "... sources/list_functions.i"
+	@echo "... sources/list_functions.s"
 	@echo "... sources/one_line.o"
 	@echo "... sources/one_line.i"
 	@echo "... sources/one_line.s"
+	@echo "... sources/parsing.o"
+	@echo "... sources/parsing.i"
+	@echo "... sources/parsing.s"
 .PHONY : help
 
 

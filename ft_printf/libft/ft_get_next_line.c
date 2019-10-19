@@ -6,12 +6,11 @@
 /*   By: ymanilow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 19:28:30 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/10/17 11:43:02 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/10/17 17:24:09 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 char		*ft_str_out_and_del(char *s, char **line)
 {
 	char		*s1;
@@ -25,7 +24,7 @@ char		*ft_str_out_and_del(char *s, char **line)
 	*line = s1;
 	s2 = s;
 	s = ft_strsub(s2, i + 1, ft_strlen(s2) - i);
-	free(s2);
+	ft_strdel(&s2);
 	return (s);
 }
 
@@ -40,7 +39,7 @@ char		*ft_read_out(char *s, int fd)
 		buff[ret] = '\0';
 		s1 = s;
 		s = ft_strjoin(s, buff);
-		free(s1);
+		ft_strdel(&s1);
 		if (ft_strchr(buff, '\n'))
 			break ;
 	}
@@ -66,7 +65,7 @@ int			ft_get_next_line(int fd, char **line)
 	{
 		s1 = ft_strdup(s[fd]);
 		*line = s1;
-		free(s[fd]);
+		ft_strdel(&s[fd]);
 		return (1);
 	}
 	return (0);

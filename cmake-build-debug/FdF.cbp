@@ -91,7 +91,13 @@
 		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/fdf.h">
 			<Option target="FdF"/>
 		</Unit>
+		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/list_functions.c">
+			<Option target="FdF"/>
+		</Unit>
 		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/one_line.c">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/parsing.c">
 			<Option target="FdF"/>
 		</Unit>
 		<Unit filename="/Users/ymanilow/curcus42/fdf/CMakeLists.txt">

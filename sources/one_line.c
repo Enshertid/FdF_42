@@ -6,94 +6,44 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 15:11:13 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/10/16 15:11:13 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/10/18 21:55:30 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void		ft_print_obt_angle(t_pointers *point, int x, int y, int sign_a, int sign_b, int end_x, int end_y)
-{
-	int f;
-	int a;
-	int b;
+#define FLOAT_TO_INT(x) ((x)>=0?(int)((x)+0.5):(int)((x)-0.5))
 
-	f = 0;
-	a = ft_mod_num(end_y - y);
-	b = ft_mod_num(end_x - x);
-	while (x != end_x && y != end_y)
-	{
-		f += a;
-		if (f > 0)
-		{
-			f -= b;
-			y += sign_a;
-		}
-		x += sign_b;
-		mlx_pixel_put(point->mlx_ptr, point->win_ptr, x, y, 0xABCFFF);
-	}
+int				m_n(int num)
+{
+	return (num > 0 ? num : -num);
 }
 
-void		ft_print_sharp_angle(t_pointers *point, int x, int y, int sign_a, int sign_b, int end_x, int end_y)
+void			ft_print_line(t_pointers *p, t_point dot)
 {
-	int f;
-	int a;
-	int b;
+	int		lnx;
+	int		lny;
+	int		ln;
+	int		d;
 
-	f = 0;
-	a = ft_mod_num(end_y - y);
-	b = ft_mod_num(end_x - x);
-	while (x != end_x && y != end_y)
+	lnx = ft_mod_num(dot.x2 - dot.x1);
+	lny = ft_mod_num(dot.y2 - dot.y1);
+	ln = ft_max(lnx, lny) + 1;
+	d = m_n(dot.y2 - dot.y1) <= m_n(dot.x2 - dot.x1) ? -lnx : -lny;
+	while (ln--)
 	{
-		f += b;
-		if (f > 0)
+		mlx_pixel_put(p->mlx_ptr, p->win_ptr, dot.x1, dot.y1, dot.color);
+		if (lny <= lnx)
+			dot.x1 += dot.x2 - dot.x1 >= 0 ? 1 : -1;
+		else
+			dot.y1 += dot.y2 - dot.y1 >= 0 ? 1 : -1;
+		if ((d += lny <= lnx ? 2 * lny : 2 * lnx) > 0)
 		{
-			f -= a;
-			x += sign_b;
-		}
-		y += sign_a;
-		mlx_pixel_put(point->mlx_ptr, point->win_ptr, x, y, 0xBCAFFF);
-	}
-}
-
-void		ft_print_inclined_line(int start_x, int start_y, int end_x, int end_y, t_pointers *point)
-{
-	int		a;
-	int		b;
-	int		f;
-	int sign_a;
-	int sign_b;
-
-	f = 0;
-	a = end_y - start_y;
-	b = end_x - start_x;
-	sign_a = a < 0 ? -1 : 1;
-	sign_b = b < 0 ? -1 : 1;
-	a = ft_mod_num(a);
-	b = ft_mod_num(b);
-	mlx_pixel_put(point->mlx_ptr, point->win_ptr, start_x, start_y, 0xABCFFF);
-	if (a < b)
-		ft_print_obt_angle(point, start_x, start_y, sign_a, sign_b, end_x, end_y);
-	else
-		ft_print_sharp_angle(point, start_x, start_y, sign_a, sign_b, end_x, end_y);
-}
-
-void		ft_print_straight_line(int start_x, int start_y, int end_x, int end_y, t_pointers *point)
-{
-	if (end_x == start_x)
-	{
-		while (start_y != end_y)
-		{
-			mlx_pixel_put(point->mlx_ptr, point->win_ptr, start_x, start_y, 0xBCAFFF);
-			start_y = start_y < end_y ? start_y + 1 : start_y - 1;
-		}
-	}
-	else
-	{
-		while (start_x != end_x)
-		{
-			mlx_pixel_put(point->mlx_ptr, point->win_ptr, start_x, start_y, 0xBCAFFF);
-			start_x = start_x < end_x ? start_x + 1 : start_x - 1;
+			if (lny <= lnx)
+				dot.y1 += dot.y2 - dot.y1 >= 0 ? 1 : -1;
+			else
+				dot.x1 += dot.x2 - dot.x1 >= 0 ? 1 : -1;
+			d -= lny <= lnx ? 2 * lnx : 2 * lny;
 		}
 	}
 }

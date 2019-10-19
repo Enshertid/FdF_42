@@ -6,7 +6,7 @@
 /*   By: dbendu <dbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 20:28:39 by dbendu            #+#    #+#             */
-/*   Updated: 2019/10/17 11:43:02 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/10/17 16:25:13 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define MAX_SIZE_T		(18446744073709551615llu)
 # define MAX_LLONG		(9223372036854775807ll)
 # define MIN_LLONG		-MAX_LLONG
-# define GNL_BUFF_SIZE	100
+# define GNL_BUFF_SIZE	1000
 
 # define ULL			unsigned long long
 # define UL				unsigned long
@@ -104,7 +104,7 @@ int						ft_isdigit(int c);
 int						ft_isprint(int c);
 int						ft_isspace(int c);
 void					ft_swap(void *a, void *b, size_t size);
-long int				ft_atoi(const char *str);
+__int128_t				ft_atoi(const char *str);
 size_t					sizeof_num(__int128_t num, unsigned base);
 
 char					*ft_strrev(char *str);
