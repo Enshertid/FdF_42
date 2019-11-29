@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/ymanilow/curcus42/fdf/ft_printf/libft/ft_mod_num.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/FdF.dir/ft_printf/libft/ft_mod_num.c.o"
-  "/Users/ymanilow/curcus42/fdf/sources/fdf.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/FdF.dir/sources/fdf.c.o"
-  "/Users/ymanilow/curcus42/fdf/sources/list_functions.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/FdF.dir/sources/list_functions.c.o"
-  "/Users/ymanilow/curcus42/fdf/sources/one_line.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/FdF.dir/sources/one_line.c.o"
-  "/Users/ymanilow/curcus42/fdf/sources/parsing.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/FdF.dir/sources/parsing.c.o"
+  "/Users/dahujlbl4/curcus42/FdF/ft_printf/libft/ft_mod_num.c" "/Users/dahujlbl4/curcus42/FdF/cmake-build-debug/CMakeFiles/FdF.dir/ft_printf/libft/ft_mod_num.c.o"
+  "/Users/dahujlbl4/curcus42/FdF/sources/fdf.c" "/Users/dahujlbl4/curcus42/FdF/cmake-build-debug/CMakeFiles/FdF.dir/sources/fdf.c.o"
+  "/Users/dahujlbl4/curcus42/FdF/sources/list_functions.c" "/Users/dahujlbl4/curcus42/FdF/cmake-build-debug/CMakeFiles/FdF.dir/sources/list_functions.c.o"
+  "/Users/dahujlbl4/curcus42/FdF/sources/one_line.c" "/Users/dahujlbl4/curcus42/FdF/cmake-build-debug/CMakeFiles/FdF.dir/sources/one_line.c.o"
+  "/Users/dahujlbl4/curcus42/FdF/sources/parsing.c" "/Users/dahujlbl4/curcus42/FdF/cmake-build-debug/CMakeFiles/FdF.dir/sources/parsing.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

@@ -12,15 +12,15 @@
 
 #include "fdf.h"
 
-t_dot			*ft_list_create(int ln, char *line)
+t_matr			*ft_list_create(int ln, char *line)
 {
-	t_dot				*new;
+	t_matr				*new;
 	__int128_t			num;
 	int					i;
 
-	if (!(new = malloc(sizeof(t_dot))))
+	if (!(new = malloc(sizeof(t_matr))))
 		error("Error with malloc of list\n", 2);
-	ft_memset(new, 0, sizeof(t_dot));
+	ft_memset(new, 0, sizeof(t_matr));
 	new->ln = ln;
 	if (!(new->array = malloc(sizeof(int) * ln)))
 		error("Error with malloc of array in list\n", 2);
@@ -41,9 +41,9 @@ t_dot			*ft_list_create(int ln, char *line)
 	return (new);
 }
 
-void			ft_list_add(t_dot *head, t_dot *new)
+void			ft_list_add(t_matr *head, t_matr *new)
 {
-	t_dot *tmp;
+	t_matr *tmp;
 
 	tmp = head;
 	while (tmp->next)

@@ -13,6 +13,7 @@
 NAME = fdf
 
 SRCS_C = ./sources/fdf.c ./sources/one_line.c ./sources/parsing.c\
+./sources/list_functions.c\
 
 SRCS_O = $(SRCS_C:.c=.o)
 
