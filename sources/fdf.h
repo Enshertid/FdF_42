@@ -6,7 +6,7 @@
 /*   By: ymanilow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:13:41 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/01 14:09:01 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/01 20:47:18 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 # define BLUE_F 0x3a75c4
 # define PURPLE_F 0xFF00FF
 # define WHITE_F 0xFFFFFF
+# define RED_F 0xe32636
 
 # include "../mlx/mlx.h"
 # include "../ft_printf/ft_printf.h"
@@ -43,6 +44,7 @@
 typedef struct		s_matr
 {
 	int				*array;
+	int				*color;
 	int				ln;
 	struct s_matr	*prev;
 	struct s_matr	*next;
@@ -51,6 +53,7 @@ typedef struct		s_matr
 typedef struct		s_mtrx
 {
 	int	**array;
+	int	**color;
 	int	ln_x;
 	int	ln_y;
 }					t_mtrx;
@@ -104,5 +107,7 @@ void				ft_print_line_img(t_pointers *p, t_dot dot, int color);
 void				ft_iso(int *x, int *y, int z, t_pointers *point);
 
 void				ft_check_angle(t_pointers *point, int *x, int *y, int *z);
+void				ft_print_line_img_grad(t_pointers *p, t_dot dot, double color_start, double color_end);
+int					ft_is_hex(char c);
 
 #endif

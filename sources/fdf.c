@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:58:38 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/01 12:58:32 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/01 16:24:36 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,11 +192,6 @@ void	ft_check_key(t_pointers *point, int key)
 	ft_memcpy(&point->dot1, &point->dot, sizeof(point->dot));
 	ft_copy_of_array(&point->mtrx1, &point->mtrx, point);
 }
-
-//void	ft_draw_gradient(t_pointers *point)
-//{
-//	while (*(int*)(p->img.char_ptr + p->img.ln_size * dot.y1 + dot.x1 * 4) != color)
-//}
 
 int		ft_key_hook_img(int key, void *param)
 {
