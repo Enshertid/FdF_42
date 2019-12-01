@@ -6,7 +6,7 @@
 #    By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 10:58:26 by ymanilow          #+#    #+#              #
-#    Updated: 2019/10/17 16:05:44 by ymanilow         ###   ########.fr        #
+#    Updated: 2019/12/01 14:41:48 by ymanilow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ clean:
 	make clean -C ./ft_printf
 	rm -Rf $(SRCS_O)
 
-fclean:
+fclean: clean
 	make fclean -C ./ft_printf/ 
 	make clean -C ./mlx/
 	rm -Rf ./fdf

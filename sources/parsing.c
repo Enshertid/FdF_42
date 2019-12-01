@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:49 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/10/17 18:49:49 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/11/29 21:30:05 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void			ft_check_size(t_pointers *point)
 		error ("matrix is empty\n", 2);
 }
 
-void			ft_fill_matrix(t_pointers *point)
+void			ft_fill_matrix(t_mtrx *mtrx, t_pointers *point)
 {
 	t_matr		*tmp;
 	int			ln;
@@ -83,17 +83,17 @@ void			ft_fill_matrix(t_pointers *point)
 		ln++;
 		tmp = tmp->next;
 	}
-	point->mtrx.array = (int**)malloc(sizeof(int*) * ln);
+	mtrx->array = (int**)malloc(sizeof(int*) * ln);
 	i = 0;
 	while (i < ln)
-		point->mtrx.array[i++] = (int*)malloc(sizeof(int) * point->matr->ln);
-	point->mtrx.ln_x = point->matr->ln;
-	point->mtrx.ln_y = ln;
+		mtrx->array[i++] = (int*)malloc(sizeof(int) * point->matr->ln);
+	mtrx->ln_x = point->matr->ln;
+	mtrx->ln_y = ln;
 	ln = -1;
 	tmp = point->matr;
-	while (tmp && point->mtrx.array[++ln])
+	while (tmp && mtrx->array[++ln])
 	{
-		ft_memcpy(point->mtrx.array[ln], tmp->array, point->mtrx.ln_x * 4);
+		ft_memcpy(mtrx->array[ln], tmp->array, mtrx->ln_x * 4);
 		tmp = tmp->next;
 	}
 }
@@ -114,5 +114,6 @@ void			ft_parsing(t_pointers *point, int ac, char **str)
 		ft_strdel(&line);
 	}
 	ft_check_size(point);
-	ft_fill_matrix(point);
+	ft_fill_matrix(&point->mtrx, point);
+	ft_fill_matrix(&point->mtrx1, point);
 }
