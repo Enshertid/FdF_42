@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:58:38 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/01 16:24:36 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/02 12:17:58 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,23 @@ void	ft_set_dot(t_pointers *point)
 	int			i;
 	int			j;
 
-	point->dot.x1 = 10;
-	point->dot.y1 = 10;
-	point->dot.start_x = 10;
-	point->dot.start_y = 10;
-	point->dot.size = 2;
-	point->dot.color = BLUE_F;
-	point->dot.angle_x = 0;
-	point->dot.angle_y = 0;
-	point->dot.angle_z = 0;
-	point->dot.iso = 0;
+	point->dot_s.x = 10;
+	point->dot_s.y = 10;
+	point->base.iso = 0;
+	point->base.size = 2;
+	point->base.color = BLUE_F;
+	point->base.start_x = 10;
+	point->base.start_y = 10;
+	point->base.angle_x = 0;
+	point->base.angle_y = 0;
+	point->base.angle_z = 0;
 	i = -1;
 	j = -1;
 	while (++i < point->mtrx.ln_y)
 		while (++j < point->mtrx.ln_x)
-			point->dot.z_min = ft_mod_num(point->dot.z_min) <= ft_mod_num(point->mtrx.array[i][j]) ?
-					point->mtrx.array[i][j] : point->dot.z_min;
-	point->dot.z = point->dot.z_min;
+			point->base.z_min = ft_mod_num(point->base.z_min) <= ft_mod_num(point->mtrx.array[i][j]) ?
+					point->mtrx.array[i][j] : point->base.z_min;
+	point->dot_s.z = point->base.z_min;
 }
 
 void	ft_change_x(t_pointers *point, int *y, int *z)
@@ -43,8 +43,8 @@ void	ft_change_x(t_pointers *point, int *y, int *z)
 
 	start_y = *y;
 	start_z = *z;
-	*y = start_z * sin(point->dot1.angle_x) + (start_y * cos(point->dot1.angle_x));
-	*z = start_z * cos(point->dot1.angle_x) - start_y * sin(point->dot1.angle_x);
+	*y = start_z * sin(point->base.angle_x) + (start_y * cos(point->base.angle_x));
+	*z = start_z * cos(point->base.angle_x) - start_y * sin(point->base.angle_x);
 }
 
 void	ft_change_y(t_pointers *point, int *x, int *z)
@@ -54,8 +54,8 @@ void	ft_change_y(t_pointers *point, int *x, int *z)
 
 	start_x = *x;
 	start_z = *z;
-	*x = start_x * cos(point->dot1.angle_y) - start_z * sin(point->dot1.angle_y);
-	*z = start_x * sin(point->dot1.angle_y) + start_z * cos(point->dot1.angle_y);
+	*x = start_x * cos(point->base.angle_y) - start_z * sin(point->base.angle_y);
+	*z = start_x * sin(point->base.angle_y) + start_z * cos(point->base.angle_y);
 }
 
 void	ft_change_z(t_pointers *point, int *x, int *y)
@@ -65,8 +65,8 @@ void	ft_change_z(t_pointers *point, int *x, int *y)
 
 	start_x = *x;
 	start_y = *y;
-	*x = start_x * cos(point->dot1.angle_z) + start_y * sin(point->dot1.angle_z);
-	*y = start_y * cos(point->dot1.angle_z) - start_x * sin(point->dot1.angle_z);
+	*x = start_x * cos(point->base.angle_z) + start_y * sin(point->base.angle_z);
+	*y = start_y * cos(point->base.angle_z) - start_x * sin(point->base.angle_z);
 }
 
 void	ft_change_angle(t_pointers *point, int key)
@@ -77,17 +77,17 @@ void	ft_change_angle(t_pointers *point, int key)
 	if (key == X_DOWN || key == Z_DOWN || key == Y_LEFT)
 		d = -1;
 	if (key == X_UP || key == X_DOWN)
-		point->dot.angle_x += 0.174533 * d;
+		point->base.angle_x += 0.174533 * d;
 	else if (key == Z_DOWN || key == Z_UP)
-		point->dot.angle_z += 0.174533 * d;
+		point->base.angle_z += 0.174533 * d;
 	else if (key == Y_RIGHT || key == Y_LEFT)
-		point->dot.angle_y += 0.174533 * d;
-	if (point->dot.angle_x == 1 || point->dot.angle_x == -1)
-		point->dot.angle_x = 0;
-	if (point->dot.angle_y == 1 || point->dot.angle_y == -1)
-		point->dot.angle_y = 0;
-	if (point->dot.angle_z == 1 || point->dot.angle_z == -1)
-		point->dot.angle_z = 0;
+		point->base.angle_y += 0.174533 * d;
+	if (point->base.angle_x == 1 || point->base.angle_x == -1)
+		point->base.angle_x = 0;
+	if (point->base.angle_y == 1 || point->base.angle_y == -1)
+		point->base.angle_y = 0;
+	if (point->base.angle_z == 1 || point->base.angle_z == -1)
+		point->base.angle_z = 0;
 }
 
 void	ft_change_all_angles(t_pointers *point, int *x, int *y, int *z)
@@ -95,12 +95,12 @@ void	ft_change_all_angles(t_pointers *point, int *x, int *y, int *z)
 	int s_x;
 	int s_y;
 	int s_z;
-	double sin_x = sin (point->dot.angle_x);
-	double cos_x = cos (point->dot.angle_x);
-	double sin_y = sin (point->dot.angle_y);
-	double cos_y = cos (point->dot.angle_y);
-	double sin_z = sin (point->dot.angle_z);
-	double cos_z = cos (point->dot.angle_z);
+	double sin_x = sin (point->base.angle_x);
+	double cos_x = cos (point->base.angle_x);
+	double sin_y = sin (point->base.angle_y);
+	double cos_y = cos (point->base.angle_y);
+	double sin_z = sin (point->base.angle_z);
+	double cos_z = cos (point->base.angle_z);
 
 	s_x = *x;
 	s_y = *y;
@@ -114,15 +114,15 @@ void	ft_change_all_angles(t_pointers *point, int *x, int *y, int *z)
 
 void	ft_check_angle(t_pointers *point, int *x, int *y, int *z)
 {
-	if (*z != point->dot.z_min)
-		*z += point->dot.z;
+	if (*z != point->base.z_min)
+		*z += point->base.z_p;
 //	if (point->dot1.angle_x || point->dot1.angle_y || point->dot1.angle_z)
 //		ft_change_all_angles(point, x, y, z);
-	if (point->dot1.angle_x != 0)
+	if (point->base.angle_x != 0)
 		ft_change_x(point, y, z);
-	if (point->dot1.angle_y != 0)
+	if (point->base.angle_y != 0)
 		ft_change_y(point, x, z);
-	if (point->dot1.angle_z != 0)
+	if (point->base.angle_z != 0)
 		ft_change_z(point, x, y);
 }
 
@@ -140,9 +140,9 @@ void	ft_check_key(t_pointers *point, int key)
 	int d;
 	
 	if (key == O)
-		point->dot.iso = 0;
+		point->base.iso = 0;
 	if (key == I)
-		point->dot.iso = 1;
+		point->base.iso = 1;
 	if (key == SPACE)
 		ft_set_dot(point);
 	if (key == PLUS || key == LEFT || key == UP)
@@ -151,46 +151,44 @@ void	ft_check_key(t_pointers *point, int key)
 		d = 1;
 	if (key == PLUS)
 	{
-		point->dot.start_x += 1;
-		point->dot.start_y += 1;
-		point->dot.size -= 1;
+		point->base.start_x += 1;
+		point->base.start_y += 1;
+		point->base.size -= 1;
 	}
 	if (key == MINUS)
 	{
-		point->dot.start_x -= 1;
-		point->dot.start_y -= 1;
-		point->dot.size += 1;
+		point->base.start_x -= 1;
+		point->base.start_y -= 1;
+		point->base.size += 1;
 	}
-	if ((key == LEFT || key == RIGHT) && point->dot.iso == 1)
+	if ((key == LEFT || key == RIGHT) && point->base.iso == 1)
 	{
-		point->dot.start_x += 10 * d;
-		point->dot.start_y -= 10 * d;
+		point->base.start_x += 10 * d;
+		point->base.start_y -= 10 * d;
 	}
-	else if ((key == LEFT || key == RIGHT) && point->dot.iso == 0)
-		point->dot.start_x += 10 * d;
-	if ((key == DOWN || key == UP) && point->dot.iso == 1)
+	else if ((key == LEFT || key == RIGHT) && point->base.iso == 0)
+		point->base.start_x += 10 * d;
+	if ((key == DOWN || key == UP) && point->base.iso == 1)
 	{
-		point->dot.start_x += 10 * d;
-		point->dot.start_y += 10 * d;
+		point->base.start_x += 10 * d;
+		point->base.start_y += 10 * d;
 	}
 	if (key == C)
 	{
-		point->dot.start_x = 750;
-		point->dot.start_y = 750;
+		point->base.start_x = 750;
+		point->base.start_y = 750;
 	}
-	else if ((key == DOWN || key == UP) && point->dot.iso == 0)
-		point->dot.start_y += 20 * d;
+	else if ((key == DOWN || key == UP) && point->base.iso == 0)
+		point->base.start_y += 20 * d;
 	if (key == ESC)
 		exit(0);
 	if (key == RISE)
-		point->dot.z += 2;
+		point->base.z_p += 2;
 	if (key == UNRISE)
-		point->dot.z -= 2;
+		point->base.z_p -= 2;
 	if (key == Y_LEFT || key == Y_RIGHT || key == X_DOWN || key == X_UP ||
 		key == Z_DOWN || key == Z_UP)
 		ft_change_angle(point, key);
-	ft_memcpy(&point->dot1, &point->dot, sizeof(point->dot));
-	ft_copy_of_array(&point->mtrx1, &point->mtrx, point);
 }
 
 int		ft_key_hook_img(int key, void *param)
@@ -201,11 +199,10 @@ int		ft_key_hook_img(int key, void *param)
 	ft_check_key(point, key);
 	ft_memset(point->img.char_ptr, 0, point->img.ln_size * 2000);
 	mlx_clear_window(point->mlx_ptr, point->win_ptr);
-	if (point->dot.iso == 0)
-		ft_draw_matrix_img(point, point->dot.iso);
+	if (point->base.iso == 0)
+		ft_draw_matrix_img(point);
 	else
 		ft_draw_matrix_img_iso(point);
-//	ft_draw_gradient(point);
 	mlx_put_image_to_window(point->mlx_ptr, point->win_ptr, point->img.img_ptr, 0, 0);
 	ft_printf("%d\n",key);
 	return(key);

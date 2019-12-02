@@ -6,7 +6,7 @@
 /*   By: ymanilow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:13:41 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/01 20:47:18 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/02 13:11:44 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,57 +41,61 @@
 # include "../ft_printf/ft_printf.h"
 # include <math.h>
 
+typedef struct		s_image
+{
+	int				bpp;
+	int				endian;
+	int				ln_size;
+	void			*img_ptr;
+	char			*char_ptr;
+}					t_image;
+
 typedef struct		s_matr
 {
+	int				ln;
 	int				*array;
 	int				*color;
-	int				ln;
-	struct s_matr	*prev;
 	struct s_matr	*next;
 }					t_matr;
 
 typedef struct		s_mtrx
 {
-	int	**array;
-	int	**color;
 	int	ln_x;
 	int	ln_y;
+	int	**array;
+	int	**color;
 }					t_mtrx;
 
-typedef struct		s_dot
+
+typedef struct		t_base
 {
-	int				z;
-	int				z_min;
-	int				x1;
-	int				y1;
-	int				x2;
-	int				y2;
+	int				z_p;
 	int				iso;
 	int				size;
 	int				color;
+	int				z_min;
 	int				start_x;
 	int				start_y;
 	double			angle_x;
 	double			angle_y;
 	double			angle_z;
-}					t_dot;
+}					t_base;
 
-typedef struct		s_image
+typedef struct		s_dot
 {
-	void			*img_ptr;
-	char			*char_ptr;
-	int				bpp;
-	int				ln_size;
-	int				endian;
-}					t_image;
+	int				x;
+	int				y;
+	int				z;
+	int				color;
+}					t_dot;
 
 typedef struct		s_pointers
 {
 	t_image			img;
-	t_dot			dot;
-	t_dot			dot1;
+	t_dot			dot_s;
+	t_dot			dot_e;
+	t_base			base;
 	t_mtrx			mtrx;
-	t_mtrx			mtrx1;
 	t_matr			*matr;
 	void			*mlx_ptr;
 	void			*win_ptr;
@@ -102,12 +106,12 @@ void				ft_list_add(t_matr *head, t_matr *new);
 void				ft_draw_matrix_img_iso(t_pointers *point);
 t_matr				*ft_list_create(int ln, char *line);
 
-void				ft_draw_matrix_img(t_pointers *point, int iso);
-void				ft_print_line_img(t_pointers *p, t_dot dot, int color);
+void				ft_draw_matrix_img(t_pointers *point);
+void				ft_print_line_img(t_pointers *p, t_dot dot_s, t_dot dot_e, int color);
 void				ft_iso(int *x, int *y, int z, t_pointers *point);
 
 void				ft_check_angle(t_pointers *point, int *x, int *y, int *z);
-void				ft_print_line_img_grad(t_pointers *p, t_dot dot, double color_start, double color_end);
+void				ft_print_line_img_grad(t_pointers *p, t_dot dot_s, t_dot dot_e, double color_start, double color_end);
 int					ft_is_hex(char c);
 
 #endif

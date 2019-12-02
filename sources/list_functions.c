@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:50:17 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/01 15:33:28 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/02 12:04:26 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,27 @@ int hex_to_dec(const char *str)
 	return (res);
 }
 
-t_matr			*ft_list_create(int ln, char *line)
+int			ft_fill_color(t_matr *new, char *line, char *s)
 {
-	char				*s;
-	t_matr				*new;
-	__int128_t			num;
-	int					i;
-	int					j;
+	int		j;
+	int		i;
 
-	s = malloc(sizeof(char*) * 9);
-	s[8] = '\0';
-	if (!(new = malloc(sizeof(t_matr))))
-		error("Error with malloc of list\n", 2);
-	ft_memset(new, 0, sizeof(t_matr));
-	new->ln = ln;
-	if (!(new->array = malloc(sizeof(int) * ln)))
-		error("Error with malloc of array in list\n", 2);
-	if (!(new->color = malloc(sizeof(int) * ln)))
-		error("Error with malloc of array in list\n", 2);
+	j = 0;
+	line++;
+	while (*line == '0' || *line == 'x')
+		s[j++] = *line++;
+	while (ft_isdigit(*line) || ft_is_hex(*line))
+		s[j++] = *line++;
+	i = 0;
+	new->color[i] = hex_to_dec(s);
+	return (j);
+}
+
+void		ft_fill_array_of_list(t_matr *new, char *line,
+									__int128_t num, char *s)
+{
+	int i;
+
 	i = 0;
 	while (*line)
 	{
@@ -70,18 +73,27 @@ t_matr			*ft_list_create(int ln, char *line)
 		while (ft_isdigit(*line) || *line == '-' || *line == '+')
 			line++;
 		if (*line == ',')
-		{
-
-			j = 0;
-			line++;
-			while (*line == '0' || *line == 'x')
-				s[j++] = *line++;
-			while (ft_isdigit(*line) || ft_is_hex(*line))
-				s[j++] = *line++;
-			j = 0;
-			new->color[j] = hex_to_dec(s);
-		}
+			line += ft_fill_color(new, line, s);
 	}
+}
+
+t_matr			*ft_list_create(int ln, char *line)
+{
+	char				*s;
+	t_matr				*new;
+	__int128_t			num;
+
+	s = malloc(sizeof(char*) * 9);
+	s[8] = '\0';
+	if (!(new = malloc(sizeof(t_matr))))
+		error("Error with malloc of list\n", 2);
+	ft_memset(new, 0, sizeof(t_matr));
+	new->ln = ln;
+	if (!(new->array = malloc(sizeof(int) * ln)))
+		error("Error with malloc of array in list\n", 2);
+	if (!(new->color = malloc(sizeof(int) * ln)))
+		error("Error with malloc of array in list\n", 2);
+	ft_fill_array_of_list(new, line, num, s);
 	return (new);
 }
 
@@ -93,5 +105,4 @@ void			ft_list_add(t_matr *head, t_matr *new)
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = new;
-	new->prev = tmp;
 }

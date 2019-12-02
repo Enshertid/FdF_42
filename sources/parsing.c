@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:49 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/01 16:29:34 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/02 12:35:50 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,28 @@ void			ft_check_size(t_pointers *point)
 		error ("matrix is empty\n", 2);
 }
 
-void			ft_fill_matrix(t_mtrx *mtrx, t_pointers *point)
+void			ft_fill_matrx(t_pointers *point, t_mtrx *mtrx)
+{
+	t_matr		*tmp;
+	int			ln;
+
+	tmp = point->matr;
+	ln = -1;
+	while (tmp && mtrx->array[++ln])
+	{
+		ft_memcpy(mtrx->array[ln], tmp->array, mtrx->ln_x * 4);
+		tmp = tmp->next;
+	}
+	ln = -1;
+	tmp = point->matr;
+	while (tmp && mtrx->color[++ln])
+	{
+		ft_memcpy(mtrx->color[ln], tmp->color, mtrx->ln_x * 4);
+		tmp = tmp->next;
+	}
+}
+
+void			ft_copy_matrix(t_mtrx *mtrx, t_pointers *point)
 {
 	t_matr		*tmp;
 	int			ln;
@@ -107,20 +128,7 @@ void			ft_fill_matrix(t_mtrx *mtrx, t_pointers *point)
 		mtrx->color[i++] = (int*)malloc(sizeof(int) * point->matr->ln);
 	mtrx->ln_x = point->matr->ln;
 	mtrx->ln_y = ln;
-	ln = -1;
-	tmp = point->matr;
-	while (tmp && mtrx->array[++ln])
-	{
-		ft_memcpy(mtrx->array[ln], tmp->array, mtrx->ln_x * 4);
-		tmp = tmp->next;
-	}
-	ln = -1;
-	tmp = point->matr;
-	while (tmp && mtrx->color[++ln])
-	{
-		ft_memcpy(mtrx->color[ln], tmp->color, mtrx->ln_x * 4);
-		tmp = tmp->next;
-	}
+	ft_fill_matrx(point, mtrx);
 }
 
 void			ft_parsing(t_pointers *point, int ac, char **str)
@@ -140,6 +148,5 @@ void			ft_parsing(t_pointers *point, int ac, char **str)
 		ft_strdel(&line);
 	}
 	ft_check_size(point);
-	ft_fill_matrix(&point->mtrx, point);
-	ft_fill_matrix(&point->mtrx1, point);
+	ft_copy_matrix(&point->mtrx, point);
 }
