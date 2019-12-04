@@ -65,39 +65,39 @@ CMAKE_SOURCE_DIR = /Users/ymanilow/curcus42/fdf
 CMAKE_BINARY_DIR = /Users/ymanilow/curcus42/fdf/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/FdF.dir
+# Target rules for target CMakeFiles/fdf.dir
 
 # All Build rule for target.
-CMakeFiles/FdF.dir/all:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/depend
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target FdF"
-.PHONY : CMakeFiles/FdF.dir/all
+CMakeFiles/fdf.dir/all:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/depend
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target fdf"
+.PHONY : CMakeFiles/fdf.dir/all
 
 # Include target in all.
-all: CMakeFiles/FdF.dir/all
+all: CMakeFiles/fdf.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/FdF.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles 6
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/FdF.dir/all
+CMakeFiles/fdf.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles 12
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/fdf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/FdF.dir/rule
+.PHONY : CMakeFiles/fdf.dir/rule
 
 # Convenience name for target.
-FdF: CMakeFiles/FdF.dir/rule
+fdf: CMakeFiles/fdf.dir/rule
 
-.PHONY : FdF
-
-# clean rule for target.
-CMakeFiles/FdF.dir/clean:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/clean
-.PHONY : CMakeFiles/FdF.dir/clean
+.PHONY : fdf
 
 # clean rule for target.
-clean: CMakeFiles/FdF.dir/clean
+CMakeFiles/fdf.dir/clean:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/clean
+.PHONY : CMakeFiles/fdf.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/fdf.dir/clean
 
 .PHONY : clean
 

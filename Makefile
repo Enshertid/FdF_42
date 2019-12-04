@@ -6,14 +6,16 @@
 #    By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 10:58:26 by ymanilow          #+#    #+#              #
-#    Updated: 2019/12/01 14:42:27 by ymanilow         ###   ########.fr        #
+#    Updated: 2019/12/03 23:35:17 by ymanilow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
 
-SRCS_C = ./sources/fdf.c ./sources/one_line.c ./sources/parsing.c\
-./sources/list_functions.c\
+SRCS_C = ./sources/fdf.c ./sources/parsing.c ./sources/work_with_angle_consistent.c\
+./sources/point_functions.c ./sources/drawing_lines.c ./sources/drawing_matrix.c\
+./sources/treatment_of_signals.c ./sources/work_with_angles.c sources/point_list_functions.c\
+./sources/keyboard.c\
 
 SRCS_O = $(SRCS_C:.c=.o)
 

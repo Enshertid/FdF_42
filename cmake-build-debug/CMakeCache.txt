@@ -133,7 +133,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=FdF
+CMAKE_PROJECT_NAME:STATIC=fdf
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -202,6 +202,12 @@ FdF_SOURCE_DIR:STATIC=/Users/ymanilow/curcus42/fdf
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
+
+//Value Computed by CMake
+fdf_BINARY_DIR:STATIC=/Users/ymanilow/curcus42/fdf/cmake-build-debug
+
+//Value Computed by CMake
+fdf_SOURCE_DIR:STATIC=/Users/ymanilow/curcus42/fdf
 
 
 ########################

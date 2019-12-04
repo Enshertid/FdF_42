@@ -111,44 +111,98 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named FdF
+# Target rules for targets named fdf
 
 # Build rule for target.
-FdF: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 FdF
-.PHONY : FdF
+fdf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fdf
+.PHONY : fdf
 
 # fast build rule for target.
-FdF/fast:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/build
-.PHONY : FdF/fast
+fdf/fast:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/build
+.PHONY : fdf/fast
 
-ft_printf/libft/ft_mod_num.o: ft_printf/libft/ft_mod_num.c.o
+ft_printf/libft/ft_is_hex.o: ft_printf/libft/ft_is_hex.c.o
 
-.PHONY : ft_printf/libft/ft_mod_num.o
+.PHONY : ft_printf/libft/ft_is_hex.o
 
 # target to build an object file
-ft_printf/libft/ft_mod_num.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/ft_printf/libft/ft_mod_num.c.o
-.PHONY : ft_printf/libft/ft_mod_num.c.o
+ft_printf/libft/ft_is_hex.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.o
+.PHONY : ft_printf/libft/ft_is_hex.c.o
 
-ft_printf/libft/ft_mod_num.i: ft_printf/libft/ft_mod_num.c.i
+ft_printf/libft/ft_is_hex.i: ft_printf/libft/ft_is_hex.c.i
 
-.PHONY : ft_printf/libft/ft_mod_num.i
+.PHONY : ft_printf/libft/ft_is_hex.i
 
 # target to preprocess a source file
-ft_printf/libft/ft_mod_num.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/ft_printf/libft/ft_mod_num.c.i
-.PHONY : ft_printf/libft/ft_mod_num.c.i
+ft_printf/libft/ft_is_hex.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.i
+.PHONY : ft_printf/libft/ft_is_hex.c.i
 
-ft_printf/libft/ft_mod_num.s: ft_printf/libft/ft_mod_num.c.s
+ft_printf/libft/ft_is_hex.s: ft_printf/libft/ft_is_hex.c.s
 
-.PHONY : ft_printf/libft/ft_mod_num.s
+.PHONY : ft_printf/libft/ft_is_hex.s
 
 # target to generate assembly for a file
-ft_printf/libft/ft_mod_num.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/ft_printf/libft/ft_mod_num.c.s
-.PHONY : ft_printf/libft/ft_mod_num.c.s
+ft_printf/libft/ft_is_hex.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.s
+.PHONY : ft_printf/libft/ft_is_hex.c.s
+
+sources/drawing_lines.o: sources/drawing_lines.c.o
+
+.PHONY : sources/drawing_lines.o
+
+# target to build an object file
+sources/drawing_lines.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/drawing_lines.c.o
+.PHONY : sources/drawing_lines.c.o
+
+sources/drawing_lines.i: sources/drawing_lines.c.i
+
+.PHONY : sources/drawing_lines.i
+
+# target to preprocess a source file
+sources/drawing_lines.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/drawing_lines.c.i
+.PHONY : sources/drawing_lines.c.i
+
+sources/drawing_lines.s: sources/drawing_lines.c.s
+
+.PHONY : sources/drawing_lines.s
+
+# target to generate assembly for a file
+sources/drawing_lines.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/drawing_lines.c.s
+.PHONY : sources/drawing_lines.c.s
+
+sources/drawing_matrix.o: sources/drawing_matrix.c.o
+
+.PHONY : sources/drawing_matrix.o
+
+# target to build an object file
+sources/drawing_matrix.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/drawing_matrix.c.o
+.PHONY : sources/drawing_matrix.c.o
+
+sources/drawing_matrix.i: sources/drawing_matrix.c.i
+
+.PHONY : sources/drawing_matrix.i
+
+# target to preprocess a source file
+sources/drawing_matrix.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/drawing_matrix.c.i
+.PHONY : sources/drawing_matrix.c.i
+
+sources/drawing_matrix.s: sources/drawing_matrix.c.s
+
+.PHONY : sources/drawing_matrix.s
+
+# target to generate assembly for a file
+sources/drawing_matrix.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/drawing_matrix.c.s
+.PHONY : sources/drawing_matrix.c.s
 
 sources/fdf.o: sources/fdf.c.o
 
@@ -156,7 +210,7 @@ sources/fdf.o: sources/fdf.c.o
 
 # target to build an object file
 sources/fdf.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/fdf.c.o
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/fdf.c.o
 .PHONY : sources/fdf.c.o
 
 sources/fdf.i: sources/fdf.c.i
@@ -165,7 +219,7 @@ sources/fdf.i: sources/fdf.c.i
 
 # target to preprocess a source file
 sources/fdf.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/fdf.c.i
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/fdf.c.i
 .PHONY : sources/fdf.c.i
 
 sources/fdf.s: sources/fdf.c.s
@@ -174,62 +228,35 @@ sources/fdf.s: sources/fdf.c.s
 
 # target to generate assembly for a file
 sources/fdf.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/fdf.c.s
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/fdf.c.s
 .PHONY : sources/fdf.c.s
 
-sources/list_functions.o: sources/list_functions.c.o
+sources/keyboard.o: sources/keyboard.c.o
 
-.PHONY : sources/list_functions.o
-
-# target to build an object file
-sources/list_functions.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/list_functions.c.o
-.PHONY : sources/list_functions.c.o
-
-sources/list_functions.i: sources/list_functions.c.i
-
-.PHONY : sources/list_functions.i
-
-# target to preprocess a source file
-sources/list_functions.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/list_functions.c.i
-.PHONY : sources/list_functions.c.i
-
-sources/list_functions.s: sources/list_functions.c.s
-
-.PHONY : sources/list_functions.s
-
-# target to generate assembly for a file
-sources/list_functions.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/list_functions.c.s
-.PHONY : sources/list_functions.c.s
-
-sources/one_line.o: sources/one_line.c.o
-
-.PHONY : sources/one_line.o
+.PHONY : sources/keyboard.o
 
 # target to build an object file
-sources/one_line.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/one_line.c.o
-.PHONY : sources/one_line.c.o
+sources/keyboard.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/keyboard.c.o
+.PHONY : sources/keyboard.c.o
 
-sources/one_line.i: sources/one_line.c.i
+sources/keyboard.i: sources/keyboard.c.i
 
-.PHONY : sources/one_line.i
+.PHONY : sources/keyboard.i
 
 # target to preprocess a source file
-sources/one_line.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/one_line.c.i
-.PHONY : sources/one_line.c.i
+sources/keyboard.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/keyboard.c.i
+.PHONY : sources/keyboard.c.i
 
-sources/one_line.s: sources/one_line.c.s
+sources/keyboard.s: sources/keyboard.c.s
 
-.PHONY : sources/one_line.s
+.PHONY : sources/keyboard.s
 
 # target to generate assembly for a file
-sources/one_line.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/one_line.c.s
-.PHONY : sources/one_line.c.s
+sources/keyboard.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/keyboard.c.s
+.PHONY : sources/keyboard.c.s
 
 sources/parsing.o: sources/parsing.c.o
 
@@ -237,7 +264,7 @@ sources/parsing.o: sources/parsing.c.o
 
 # target to build an object file
 sources/parsing.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/parsing.c.o
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/parsing.c.o
 .PHONY : sources/parsing.c.o
 
 sources/parsing.i: sources/parsing.c.i
@@ -246,7 +273,7 @@ sources/parsing.i: sources/parsing.c.i
 
 # target to preprocess a source file
 sources/parsing.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/parsing.c.i
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/parsing.c.i
 .PHONY : sources/parsing.c.i
 
 sources/parsing.s: sources/parsing.c.s
@@ -255,8 +282,143 @@ sources/parsing.s: sources/parsing.c.s
 
 # target to generate assembly for a file
 sources/parsing.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/sources/parsing.c.s
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/parsing.c.s
 .PHONY : sources/parsing.c.s
+
+sources/point_functions.o: sources/point_functions.c.o
+
+.PHONY : sources/point_functions.o
+
+# target to build an object file
+sources/point_functions.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/point_functions.c.o
+.PHONY : sources/point_functions.c.o
+
+sources/point_functions.i: sources/point_functions.c.i
+
+.PHONY : sources/point_functions.i
+
+# target to preprocess a source file
+sources/point_functions.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/point_functions.c.i
+.PHONY : sources/point_functions.c.i
+
+sources/point_functions.s: sources/point_functions.c.s
+
+.PHONY : sources/point_functions.s
+
+# target to generate assembly for a file
+sources/point_functions.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/point_functions.c.s
+.PHONY : sources/point_functions.c.s
+
+sources/point_list_functions.o: sources/point_list_functions.c.o
+
+.PHONY : sources/point_list_functions.o
+
+# target to build an object file
+sources/point_list_functions.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/point_list_functions.c.o
+.PHONY : sources/point_list_functions.c.o
+
+sources/point_list_functions.i: sources/point_list_functions.c.i
+
+.PHONY : sources/point_list_functions.i
+
+# target to preprocess a source file
+sources/point_list_functions.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/point_list_functions.c.i
+.PHONY : sources/point_list_functions.c.i
+
+sources/point_list_functions.s: sources/point_list_functions.c.s
+
+.PHONY : sources/point_list_functions.s
+
+# target to generate assembly for a file
+sources/point_list_functions.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/point_list_functions.c.s
+.PHONY : sources/point_list_functions.c.s
+
+sources/treatment_of_signals.o: sources/treatment_of_signals.c.o
+
+.PHONY : sources/treatment_of_signals.o
+
+# target to build an object file
+sources/treatment_of_signals.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/treatment_of_signals.c.o
+.PHONY : sources/treatment_of_signals.c.o
+
+sources/treatment_of_signals.i: sources/treatment_of_signals.c.i
+
+.PHONY : sources/treatment_of_signals.i
+
+# target to preprocess a source file
+sources/treatment_of_signals.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/treatment_of_signals.c.i
+.PHONY : sources/treatment_of_signals.c.i
+
+sources/treatment_of_signals.s: sources/treatment_of_signals.c.s
+
+.PHONY : sources/treatment_of_signals.s
+
+# target to generate assembly for a file
+sources/treatment_of_signals.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/treatment_of_signals.c.s
+.PHONY : sources/treatment_of_signals.c.s
+
+sources/work_with_angle_consistent.o: sources/work_with_angle_consistent.c.o
+
+.PHONY : sources/work_with_angle_consistent.o
+
+# target to build an object file
+sources/work_with_angle_consistent.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/work_with_angle_consistent.c.o
+.PHONY : sources/work_with_angle_consistent.c.o
+
+sources/work_with_angle_consistent.i: sources/work_with_angle_consistent.c.i
+
+.PHONY : sources/work_with_angle_consistent.i
+
+# target to preprocess a source file
+sources/work_with_angle_consistent.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/work_with_angle_consistent.c.i
+.PHONY : sources/work_with_angle_consistent.c.i
+
+sources/work_with_angle_consistent.s: sources/work_with_angle_consistent.c.s
+
+.PHONY : sources/work_with_angle_consistent.s
+
+# target to generate assembly for a file
+sources/work_with_angle_consistent.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/work_with_angle_consistent.c.s
+.PHONY : sources/work_with_angle_consistent.c.s
+
+sources/work_with_angles.o: sources/work_with_angles.c.o
+
+.PHONY : sources/work_with_angles.o
+
+# target to build an object file
+sources/work_with_angles.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/work_with_angles.c.o
+.PHONY : sources/work_with_angles.c.o
+
+sources/work_with_angles.i: sources/work_with_angles.c.i
+
+.PHONY : sources/work_with_angles.i
+
+# target to preprocess a source file
+sources/work_with_angles.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/work_with_angles.c.i
+.PHONY : sources/work_with_angles.c.i
+
+sources/work_with_angles.s: sources/work_with_angles.c.s
+
+.PHONY : sources/work_with_angles.s
+
+# target to generate assembly for a file
+sources/work_with_angles.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/work_with_angles.c.s
+.PHONY : sources/work_with_angles.c.s
 
 # Help Target
 help:
@@ -266,22 +428,40 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... FdF"
-	@echo "... ft_printf/libft/ft_mod_num.o"
-	@echo "... ft_printf/libft/ft_mod_num.i"
-	@echo "... ft_printf/libft/ft_mod_num.s"
+	@echo "... fdf"
+	@echo "... ft_printf/libft/ft_is_hex.o"
+	@echo "... ft_printf/libft/ft_is_hex.i"
+	@echo "... ft_printf/libft/ft_is_hex.s"
+	@echo "... sources/drawing_lines.o"
+	@echo "... sources/drawing_lines.i"
+	@echo "... sources/drawing_lines.s"
+	@echo "... sources/drawing_matrix.o"
+	@echo "... sources/drawing_matrix.i"
+	@echo "... sources/drawing_matrix.s"
 	@echo "... sources/fdf.o"
 	@echo "... sources/fdf.i"
 	@echo "... sources/fdf.s"
-	@echo "... sources/list_functions.o"
-	@echo "... sources/list_functions.i"
-	@echo "... sources/list_functions.s"
-	@echo "... sources/one_line.o"
-	@echo "... sources/one_line.i"
-	@echo "... sources/one_line.s"
+	@echo "... sources/keyboard.o"
+	@echo "... sources/keyboard.i"
+	@echo "... sources/keyboard.s"
 	@echo "... sources/parsing.o"
 	@echo "... sources/parsing.i"
 	@echo "... sources/parsing.s"
+	@echo "... sources/point_functions.o"
+	@echo "... sources/point_functions.i"
+	@echo "... sources/point_functions.s"
+	@echo "... sources/point_list_functions.o"
+	@echo "... sources/point_list_functions.i"
+	@echo "... sources/point_list_functions.s"
+	@echo "... sources/treatment_of_signals.o"
+	@echo "... sources/treatment_of_signals.i"
+	@echo "... sources/treatment_of_signals.s"
+	@echo "... sources/work_with_angle_consistent.o"
+	@echo "... sources/work_with_angle_consistent.i"
+	@echo "... sources/work_with_angle_consistent.s"
+	@echo "... sources/work_with_angles.o"
+	@echo "... sources/work_with_angles.i"
+	@echo "... sources/work_with_angles.s"
 .PHONY : help
 
 

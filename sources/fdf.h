@@ -6,7 +6,7 @@
 /*   By: ymanilow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:13:41 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/02 13:11:44 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/04 02:18:45 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define SPACE 49
 # define MINUS 24
 # define RIGHT 124
-# define UNRISE 33
+# define FALL 33
 # define I 34
 # define O 31
 # define Y_LEFT 86
@@ -35,7 +35,9 @@
 # define BLUE_F 0x3a75c4
 # define PURPLE_F 0xFF00FF
 # define WHITE_F 0xFFFFFF
-# define RED_F 0xe32636
+# define RED_F 0xFF0000
+# define HEIGHT 1400
+# define WIDTH 2570
 
 # include "../mlx/mlx.h"
 # include "../ft_printf/ft_printf.h"
@@ -66,19 +68,47 @@ typedef struct		s_mtrx
 	int	**color;
 }					t_mtrx;
 
+typedef struct		s_angle
+{
+	double			angle_x;
+	double			angle_y;
+	double			angle_z;
+	double			sin_x;
+	double			cos_x;
+	double			sin_y;
+	double			cos_y;
+	double			sin_z;
+	double			cos_z;
+	double			x_x;
+	double			y_x;
+	double			z_x;
+	double			x_y;
+	double			y_y;
+	double			z_y;
+	double			x_z;
+	double			y_z;
+	double			z_z;
+}					t_angle;
+
+typedef struct		s_color
+{
+	double			i_r;
+	double			i_g;
+	double			i_b;
+	int				color_s;
+	int				color_e;
+	int				flag_color;
+}					t_color;
 
 typedef struct		t_base
 {
 	int				z_p;
 	int				iso;
 	int				size;
-	int				color;
 	int				z_min;
 	int				start_x;
 	int				start_y;
-	double			angle_x;
-	double			angle_y;
-	double			angle_z;
+	int				flag_first;
 }					t_base;
 
 typedef struct		s_dot
@@ -86,7 +116,9 @@ typedef struct		s_dot
 	int				x;
 	int				y;
 	int				z;
-	int				color;
+	double			r;
+	double			g;
+	double			b;
 }					t_dot;
 
 typedef struct		s_pointers
@@ -97,21 +129,41 @@ typedef struct		s_pointers
 	t_base			base;
 	t_mtrx			mtrx;
 	t_matr			*matr;
+	t_angle			angle;
+	t_color			color;
 	void			*mlx_ptr;
 	void			*win_ptr;
+	int				x;
+	int				y;
+	int				left;
 }					t_pointers;
 
 void				ft_parsing(t_pointers *point, int ac, char **str);
 void				ft_list_add(t_matr *head, t_matr *new);
-void				ft_draw_matrix_img_iso(t_pointers *point);
-t_matr				*ft_list_create(int ln, char *line);
+t_matr				*ft_list_create(int ln, char *line, t_pointers *point);
 
 void				ft_draw_matrix_img(t_pointers *point);
-void				ft_print_line_img(t_pointers *p, t_dot dot_s, t_dot dot_e, int color);
+void				ft_draw_matrix_img_iso(t_pointers *p);
 void				ft_iso(int *x, int *y, int z, t_pointers *point);
 
+void				ft_print_line_img(t_pointers *p, t_dot dot_s, int color);
+void				ft_print_line_img_grad(t_pointers *p, t_dot dot_s, int color_start, int color_end);
+
+void				ft_set_dot(t_pointers *point);
+
+void				ft_change_angle(t_pointers *point, int key);
 void				ft_check_angle(t_pointers *point, int *x, int *y, int *z);
-void				ft_print_line_img_grad(t_pointers *p, t_dot dot_s, t_dot dot_e, double color_start, double color_end);
-int					ft_is_hex(char c);
+void				ft_change_all_angles(t_pointers *point, int *x, int *y, int *z);
+
+void				ft_change_x(t_pointers *point, int *y, int *z);
+void				ft_change_y(t_pointers *point, int *x, int *z);
+void				ft_change_z(t_pointers *point, int *x, int *y);
+
+void				ft_check_key(t_pointers *point, int key);
+int					ft_key_hook_img(int key, void *param);
+int					ft_mouse_press(int button, int x, int y, void *param);
+int					ft_mouse_release(int button, int x, int y, void *param);
+int					ft_mouse_movement(int x, int y, void *param);
+
 
 #endif

@@ -6,20 +6,11 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:49 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/02 12:35:50 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/04 02:55:09 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-int				ft_is_hex(char c)
-{
-	if (c == 'A' || c == 'B' || c == 'C' || c == 'D' || c == 'E' || c == 'F' ||
-		c == 'a' || c == 'b' || c == 'c' || c == 'd' || c == 'e' || c == 'f')
-		return (1);
-	else
-		return (0);
-}
 
 void			ft_check_line(t_pointers *point, char *line)
 {
@@ -60,9 +51,9 @@ void			ft_pars_line(t_pointers *point, char *line)
 				i++;
 	}
 	if (ln > 0 && !point->matr)
-		point->matr = ft_list_create(ln, line);
+		point->matr = ft_list_create(ln, line, point);
 	else if (ln > 0)
-		ft_list_add(point->matr, ft_list_create(ln, line));
+		ft_list_add(point->matr, ft_list_create(ln, line, point));
 }
 
 void			ft_check_size(t_pointers *point)
@@ -105,7 +96,7 @@ void			ft_fill_matrx(t_pointers *point, t_mtrx *mtrx)
 	}
 }
 
-void			ft_copy_matrix(t_mtrx *mtrx, t_pointers *point)
+void			 ft_copy_matrix(t_mtrx *mtrx, t_pointers *point)
 {
 	t_matr		*tmp;
 	int			ln;
@@ -140,6 +131,8 @@ void			ft_parsing(t_pointers *point, int ac, char **str)
 	if (ac != 2)
 		error("wrong number of arguments\n", 2);
 	fd = open(str[1], O_RDONLY);
+	if (fd < 0)
+		error ("wrong file\n", 2);
 	ft_printf("str[1] = %s\n", str[1]);
 	while (ft_get_next_line(fd, &line) > 0)
 	{
@@ -149,4 +142,13 @@ void			ft_parsing(t_pointers *point, int ac, char **str)
 	}
 	ft_check_size(point);
 	ft_copy_matrix(&point->mtrx, point);
+	int i = -1;
+	int j = -1;
+	while (++i < point->mtrx.ln_y)
+	{
+		while (point->mtrx.color[i][++j])
+			ft_printf("COLOR == %d\n", point->mtrx.color[i][j]);
+		j = -1;
+	}
+	point->base.flag_first = 1;
 }

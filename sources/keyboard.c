@@ -1,0 +1,87 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keyboard.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/03 22:53:56 by ymanilow          #+#    #+#             */
+/*   Updated: 2019/12/03 23:10:34 by ymanilow         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fdf.h"
+
+void				ft_key_pointers(t_pointers *point, int key)
+{
+	int			d;
+
+	if (key == PLUS || key == LEFT || key == UP)
+		d = -1;
+	else
+		d = 1;
+	if ((key == LEFT || key == RIGHT) && point->base.iso == 1)
+	{
+		point->base.start_x += 10 * d;
+		point->base.start_y -= 10 * d;
+	}
+	else if ((key == LEFT || key == RIGHT) && point->base.iso == 0)
+		point->base.start_x += 10 * d;
+	if ((key == DOWN || key == UP) && point->base.iso == 1)
+	{
+		point->base.start_x += 10 * d;
+		point->base.start_y += 10 * d;
+	}
+	else if ((key == DOWN || key == UP) && point->base.iso == 0)
+		point->base.start_y += 20 * d;
+}
+
+void				ft_key_change(t_pointers *point, int key)
+{
+	if (key == PLUS)
+	{
+		point->base.start_x += 1;
+		point->base.start_y += 1;
+		point->base.size -= 1;
+	}
+	if (key == MINUS)
+	{
+		point->base.start_x -= 1;
+		point->base.start_y -= 1;
+		point->base.size += 1;
+	}
+	if (key == C && point->base.iso == 0)
+	{
+		point->base.start_x = WIDTH / 3;
+		point->base.start_y = HEIGHT / 3;
+	}
+	else if (key == C)
+	{
+		point->base.start_x = WIDTH / 2;
+		point->base.start_y = -HEIGHT / 3;
+	}
+	if (key == RISE)
+		point->base.z_p += 2;
+	if (key == FALL)
+		point->base.z_p -= 2;
+}
+
+void				ft_check_key(t_pointers *point, int key)
+{
+	if (key == ESC)
+		exit(0);
+	if (key == SPACE)
+		ft_set_dot(point);
+	if (key == LEFT || key == RIGHT || key == DOWN || key == UP)
+		ft_key_pointers(point, key);
+	if (key == PLUS || key == MINUS || key == C || key == RISE ||
+			key == FALL)
+		ft_key_change(point, key);
+	if (key == Y_LEFT || key == Y_RIGHT || key == X_DOWN || key == X_UP ||
+		key == Z_DOWN || key == Z_UP)
+		ft_change_angle(point, key);
+	if (key == O)
+		point->base.iso = 0;
+	if (key == I)
+		point->base.iso = 1;
+}

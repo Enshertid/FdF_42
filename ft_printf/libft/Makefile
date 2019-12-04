@@ -55,7 +55,8 @@ ft_lstdelone.c	ft_lstappend.c	ft_lstpopback.c	\
 ft_dlstnew.c	ft_dlstnew.c	ft_dlstiter.c	\
 ft_dlstsize.c	ft_dlstpurge.c	ft_dlstappend.c	\
 ft_get_next_line.c\
-ft_mod_num.c
+ft_mod_num.c\
+ft_is_hex.c
 
 
 

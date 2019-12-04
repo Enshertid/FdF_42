@@ -47,6 +47,8 @@ typedef struct			s_dlist
 	struct s_dlist		*end;
 }						t_dlist;
 
+int						ft_is_hex(char c);
+
 int						ft_get_next_line(int fd, char **line);
 int						ft_mod_num(int num);
 
