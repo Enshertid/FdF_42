@@ -83,7 +83,7 @@ void		ft_fill_array_of_list(t_matr *new, char *line,
 		num = ft_atoi(line);
 		new->array[i] = num;
 		if (num != new->array[i++])
-			error("Overflow of int\n", 2);
+			ft_error("Overflow of int\n", 2);
 		while (ft_isdigit(*line) || *line == '-' || *line == '+')
 			line++;
 		line += ft_fill_color(new, line, &j, p);
@@ -96,13 +96,13 @@ t_matr			*ft_list_create(int ln, char *line, t_pointers *point)
 	__int128_t			num;
 
 	if (!(new = malloc(sizeof(t_matr))))
-		error("Error with malloc of list\n", 2);
+		ft_error("Error with malloc of list\n", 2);
 	ft_memset(new, 0, sizeof(t_matr));
 	new->ln = ln;
 	if (!(new->array = malloc(sizeof(int) * ln)))
-		error("Error with malloc of array in list\n", 2);
+		ft_error("Error with malloc of array in list\n", 2);
 	if (!(new->color = malloc(sizeof(int) * ln)))
-		error("Error with malloc of array in list\n", 2);
+		ft_error("Error with malloc of array in list\n", 2);
 	ft_fill_array_of_list(new, line, num, point);
 	return (new);
 }

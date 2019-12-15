@@ -6,7 +6,7 @@
 #    By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 10:58:26 by ymanilow          #+#    #+#              #
-#    Updated: 2019/12/03 23:35:17 by ymanilow         ###   ########.fr        #
+#    Updated: 2019/12/15 17:42:12 by ymanilow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ SRCS_C = ./sources/fdf.c ./sources/parsing.c ./sources/work_with_angle_consisten
 
 SRCS_O = $(SRCS_C:.c=.o)
 
+HEADER = fdf.h
+
 LIBMLX = -L ./mlx/ -l mlx -framework OpenGL -framework AppKit
 
 LIB = ./ft_printf/libftprintf.a
@@ -28,19 +30,19 @@ all: $(NAME)
 %.o: sources/%.c
 	@gcc -Wall -Wextra -Werror -c $(SRCS_C)
 
-$(NAME): $(SRCS_O)
+$(NAME): $(SRCS_O) $(HEADER)
 	@make -C ./mlx/
 	@make -C ./ft_printf/
-	gcc -Wall -Wextra -Werror -Isources/ -Imlx/ $(LIBMLX) $(LIB) $(SRCS_O) -o $(NAME)
+	@gcc -Wall -Wextra -Werror -Isources/ -Imlx/ $(LIBMLX) $(LIB) $(SRCS_O) -o $(NAME)
 
 clean:
-	make clean -C ./ft_printf
-	rm -Rf $(SRCS_O)
+	@make clean -C ./ft_printf
+	@rm -Rf $(SRCS_O)
 
 fclean: clean
-	make fclean -C ./ft_printf/ 
-	make clean -C ./mlx/
-	rm -Rf ./fdf
+	@make fclean -C ./ft_printf/
+	@make clean -C ./mlx/
+	@rm -Rf ./fdf
 	
 re: fclean all
 

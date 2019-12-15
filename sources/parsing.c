@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:49 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/04 02:55:09 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/15 18:05:27 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void			ft_check_line(t_pointers *point, char *line)
 		*line == '+' || *line != ',' || *line != 'x' || !ft_is_hex(*line))
 		{
 			if ((*line == '-' || *line == '+') && (!ft_isdigit(*(line + 1))))
-					error("wrong symbol\n", 2);
+					ft_error("wrong symbol\n", 2);
 			else if (*line == 'x' && *(line - 1) != '0' &&
 					(ft_isdigit(*(line + 1)) || !ft_is_hex(*(line + 1))))
-				error ("wrong symbol\n", 2);
+				ft_error ("wrong symbol\n", 2);
 			line++;
 		}
 		else
-			error("wrong symbol\n", 2);
+			ft_error("wrong symbol\n", 2);
 	}
 }
 
@@ -67,12 +67,12 @@ void			ft_check_size(t_pointers *point)
 		while (tmp->next)
 		{
 			if (tmp->ln < ln_x)
-				error ("wrong_size\n", 2);
+				ft_error ("wrong_size\n", 2);
 			else
 				tmp = tmp->next;
 		}
 	else
-		error ("matrix is empty\n", 2);
+		ft_error ("matrix is empty\n", 2);
 }
 
 void			ft_fill_matrx(t_pointers *point, t_mtrx *mtrx)
@@ -129,10 +129,10 @@ void			ft_parsing(t_pointers *point, int ac, char **str)
 
 
 	if (ac != 2)
-		error("wrong number of arguments\n", 2);
+		ft_error("wrong number of arguments\n", 2);
 	fd = open(str[1], O_RDONLY);
 	if (fd < 0)
-		error ("wrong file\n", 2);
+		ft_error ("wrong file\n", 2);
 	ft_printf("str[1] = %s\n", str[1]);
 	while (ft_get_next_line(fd, &line) > 0)
 	{
