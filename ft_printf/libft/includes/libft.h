@@ -6,7 +6,7 @@
 /*   By: dbendu <dbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 20:28:39 by dbendu            #+#    #+#             */
-/*   Updated: 2019/12/16 18:59:22 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/16 19:36:25 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@
 # define UL				unsigned long
 
 # define TOSTR(a)		#a
+# define TRUE 1
+# define FALSE 0
+
+typedef char t_bool;
 
 typedef	struct			s_list
 {
@@ -48,6 +52,7 @@ typedef struct			s_dlist
 }						t_dlist;
 
 int						ft_is_hex(char c);
+void					ft_error(const char *error_msg, int error_code);
 
 int						ft_get_next_line(int fd, char **line);
 int						ft_mod_num(int num);
@@ -155,7 +160,6 @@ long double				ft_dpow(long double num, int n);
 void					print_bits(void *a, size_t size);
 void					printn_bits(void *a, size_t size);
 unsigned long long		ft_ipow(unsigned long long num, int n);
-void					error(const char *error_msg, int error_code);
 char					*ft_itoa(long long int num);
 
 #endif

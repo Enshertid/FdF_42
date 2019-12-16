@@ -6,7 +6,7 @@
 /*   By: ymanilow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:13:41 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/04 02:18:45 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/16 19:36:24 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,21 @@
 # define Z_DOWN 83
 # define Z_UP 92
 # define C 8
-# define BLUE_F 0x3a75c4
-# define PURPLE_F 0xFF00FF
-# define WHITE_F 0xFFFFFF
-# define RED_F 0xFF0000
+# define G 5
+# define K 40
+# define SHIFT 257
 # define HEIGHT 1400
 # define WIDTH 2570
+# define RED_F 0xFF0000
+# define BLUE_F 0x3a75c4
+# define GREEN_F 0x00FF00
+# define WHITE_F 0xFFFFFF
+# define ORANGE_F 0xFF6600
+# define YELLOW_F 0xFFFF00
+# define PURPLE_F 0xFF00FF
+# define TURQUOISE_F 0x33FFFF
+# define ANGLE_MOUSE 0.0872665
+# define ANGLE 0.174533
 
 # include "../mlx/mlx.h"
 # include "../ft_printf/ft_printf.h"
@@ -95,21 +104,34 @@ typedef struct		s_color
 	double			i_r;
 	double			i_g;
 	double			i_b;
-	int				color_s;
-	int				color_e;
-	int				flag_color;
+	int				custom_color;
 }					t_color;
 
 typedef struct		t_base
 {
 	int				z_p;
-	int				iso;
 	int				size;
 	int				z_min;
 	int				start_x;
 	int				start_y;
-	int				flag_first;
 }					t_base;
+
+typedef struct		s_mouse
+{
+	int				x;
+	int				y;
+	t_bool			left_but;
+	t_bool			right_but;
+}					t_mouse;
+
+typedef struct		s_mod
+{
+	t_bool			flag_color;
+	t_bool			flag_first;
+	t_bool			shift;
+	t_bool			grad;
+	t_bool			iso;
+}					t_mod;
 
 typedef struct		s_dot
 {
@@ -131,11 +153,10 @@ typedef struct		s_pointers
 	t_matr			*matr;
 	t_angle			angle;
 	t_color			color;
+	t_mouse			mouse;
+	t_mod			mod;
 	void			*mlx_ptr;
 	void			*win_ptr;
-	int				x;
-	int				y;
-	int				left;
 }					t_pointers;
 
 void				ft_parsing(t_pointers *point, int ac, char **str);
@@ -150,20 +171,21 @@ void				ft_print_line_img(t_pointers *p, t_dot dot_s, int color);
 void				ft_print_line_img_grad(t_pointers *p, t_dot dot_s, int color_start, int color_end);
 
 void				ft_set_dot(t_pointers *point);
+void				ft_set_custom_color(t_pointers *point);
 
+void				ft_set_angles(t_pointers *point);
 void				ft_change_angle(t_pointers *point, int key);
 void				ft_check_angle(t_pointers *point, int *x, int *y, int *z);
-void				ft_change_all_angles(t_pointers *point, int *x, int *y, int *z);
 
-void				ft_change_x(t_pointers *point, int *y, int *z);
-void				ft_change_y(t_pointers *point, int *x, int *z);
-void				ft_change_z(t_pointers *point, int *x, int *y);
+int					ft_key_hook_img(int key, t_pointers *point);
+int					ft_key_release(int key, t_pointers *point);
+int					ft_mouse_press(int button, int x, int y, t_pointers *point);
+int					ft_mouse_release(int button, int x, int y, t_pointers *point);
+int					ft_mouse_movement(int x, int y, t_pointers *point);
 
+void				ft_movement(t_pointers *point, int x, int y);
+void				ft_angle_movement(t_pointers *point, int x, int y);
 void				ft_check_key(t_pointers *point, int key);
-int					ft_key_hook_img(int key, void *param);
-int					ft_mouse_press(int button, int x, int y, void *param);
-int					ft_mouse_release(int button, int x, int y, void *param);
-int					ft_mouse_movement(int x, int y, void *param);
 
 
 #endif
