@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 23:26:37 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/04 03:12:16 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/16 18:59:22 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int			ft_fill_color(t_matr *new, char *line, int *check, t_pointers *p)
 
 	j = 0;
 	if (!*check)
-		i = 0;
+		i = -1;
 	if (*line == ',')
 	{
 		s = malloc(sizeof(char *) * 9);
@@ -57,7 +57,7 @@ int			ft_fill_color(t_matr *new, char *line, int *check, t_pointers *p)
 			s[j++] = *line++;
 		new->color[++i] = hex_to_dec(s + 2);
 		j++;
-		p->color.flag_color = 1;
+		p->mod.flag_color = TRUE;
 		free(s);
 	}
 	else

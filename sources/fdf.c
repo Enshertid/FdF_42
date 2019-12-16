@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:58:38 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/03 22:46:26 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/16 18:59:15 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ int		main(int ac, char **av)
 	point.img.char_ptr = mlx_get_data_addr(point.img.img_ptr, &point.img.bpp, &point.img.ln_size,
 			&point.img.endian);
 	mlx_hook(point.win_ptr, 2, 0, ft_key_hook_img, &point);
+	mlx_hook(point.win_ptr, 3, 0, ft_key_release, &point);
 	mlx_hook(point.win_ptr, 4, 0, ft_mouse_press, &point);
 	mlx_hook(point.win_ptr, 6, 0, ft_mouse_movement, &point);
 	mlx_hook(point.win_ptr, 5, 0, ft_mouse_release, &point);
-
 	mlx_clear_window(point.mlx_ptr, point.win_ptr);
 	mlx_loop(point.mlx_ptr);
 	mlx_destroy_image(point.mlx_ptr, point.win_ptr);
