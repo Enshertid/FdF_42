@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 22:31:52 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/04 01:02:44 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/16 19:22:52 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,6 @@ void				ft_set_angles(t_pointers *point)
 	point->angle.z_z = point->angle.cos_x * point->angle.cos_y;
 }
 
-void				ft_change_all_angles(t_pointers *point, int *x, int *y, int *z)
-{
-	int s_x;
-	int s_y;
-	int s_z;
-
-
-	s_x = *x;
-	s_y = *y;
-	s_z = *z;
-	*x = s_x * point->angle.x_x + s_y * point->angle.y_x + s_z * point->angle.z_x;
-	*y = s_x * point->angle.x_y + s_y * point->angle.y_y + s_z * point->angle.z_y;
-	*z = s_x * point->angle.x_z + s_y * point->angle.y_z + s_z * point->angle.z_z;
-}
-
 void				ft_change_angle(t_pointers *point, int key)
 {
 	int			d;
@@ -74,14 +59,19 @@ void				ft_change_angle(t_pointers *point, int key)
 
 void				ft_check_angle(t_pointers *point, int *x, int *y, int *z)
 {
+	int s_x;
+	int s_y;
+	int s_z;
+
 	if (*z != point->base.z_min)
 		*z += point->base.z_p;
 	if (point->angle.angle_x || point->angle.angle_y || point->angle.angle_z)
-		ft_change_all_angles(point, x, y, z);
-//	if (point->angle.angle_x != 0)
-//		ft_change_x(point, y, z);
-//	if (point->angle.angle_y != 0)
-//		ft_change_y(point, x, z);
-//	if (point->angle.angle_z != 0)
-//		ft_change_z(point, x, y);
+	{
+		s_x = *x;
+		s_y = *y;
+		s_z = *z;
+		*x = s_x * point->angle.x_x + s_y * point->angle.y_x + s_z * point->angle.z_x;
+		*y = s_x * point->angle.x_y + s_y * point->angle.y_y + s_z * point->angle.z_y;
+		*z = s_x * point->angle.x_z + s_y * point->angle.y_z + s_z * point->angle.z_z;
+	}
 }

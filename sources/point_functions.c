@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:50:17 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/16 15:32:17 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/16 19:01:16 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,9 @@ void				ft_set_dot(t_pointers *point)
 		point->mod.iso = TRUE;
 	point->base.start_x = WIDTH / 3;
 	point->base.start_y = HEIGHT / 3;
+	point->angle.angle_x = 0;
+	point->angle.angle_y = 0;
+	point->angle.angle_z = 0;
 	point->dot_s.z = point->base.z_min;
 	point->dot_e.z = point->base.z_min;
 }

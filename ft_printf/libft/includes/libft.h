@@ -6,7 +6,7 @@
 /*   By: dbendu <dbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 20:28:39 by dbendu            #+#    #+#             */
-/*   Updated: 2019/12/16 12:55:45 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/16 19:03:41 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@
 # define MAX_LLONG		(9223372036854775807ll)
 # define MIN_LLONG		-MAX_LLONG
 # define GNL_BUFF_SIZE	1000
-# define TRUE 1
-# define FALSE 0
 
 # define ULL			unsigned long long
 # define UL				unsigned long
 
 # define TOSTR(a)		#a
+# define TRUE 1
+# define FALSE 0
+
+typedef char t_bool;
 
 typedef	struct			s_list
 {
@@ -49,13 +51,11 @@ typedef struct			s_dlist
 	struct s_dlist		*end;
 }						t_dlist;
 
-typedef	char t_bool;
-
 int						ft_is_hex(char c);
+void					ft_error(const char *error_msg, int error_code);
 
 int						ft_get_next_line(int fd, char **line);
 int						ft_mod_num(int num);
-void					ft_error(const char *error_msg, int error_code);
 
 void					ft_lstpop(t_list **list);
 void					ft_lstpurge(t_list **list);
