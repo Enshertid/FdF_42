@@ -93,7 +93,7 @@ void				ft_change_color(t_pointers *point)
 void				ft_check_key(t_pointers *point, int key)
 {
 	if (key == ESC)
-		exit(0);
+		ft_free_exit(point);
 	if (key == SPACE)
 		ft_set_dot(point);
 	if (key == K)

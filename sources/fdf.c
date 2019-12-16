@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:58:38 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/16 19:39:26 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/16 21:03:02 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,33 @@ Scroll Left — 6
 
 Scroll Right — 7
  */
-int		main(int ac, char **av)
+
+int					ft_free_exit(t_pointers *point)
+{
+	t_matr			*tmp;
+	int				j;
+
+	tmp = point->matr;
+	while (tmp)
+	{
+		point->matr = tmp;
+		free(point->matr->array);
+		free(point->matr->color);
+		tmp = tmp->next;
+		free(point->matr);
+	}
+	j = -1;
+	while (++j < point->mtrx.ln_y)
+		free(point->mtrx.array[j]);
+	j = -1;
+	while (++j < point->mtrx.ln_y)
+		free(point->mtrx.color[j]);
+	mlx_destroy_image(point->mlx_ptr, point->img.img_ptr);
+	mlx_destroy_window(point->mlx_ptr, point->win_ptr);
+	exit(0);
+}
+
+int					main(int ac, char **av)
 {
 	t_pointers		point;
 	
@@ -44,8 +70,9 @@ int		main(int ac, char **av)
 	mlx_hook(point.win_ptr, 4, 0, ft_mouse_press, &point);
 	mlx_hook(point.win_ptr, 6, 0, ft_mouse_movement, &point);
 	mlx_hook(point.win_ptr, 5, 0, ft_mouse_release, &point);
+	mlx_hook(point.win_ptr, 17, 0, ft_free_exit, &point);
 	mlx_clear_window(point.mlx_ptr, point.win_ptr);
 	mlx_loop(point.mlx_ptr);
-	mlx_destroy_image(point.mlx_ptr, point.win_ptr);
+	ft_free_exit(&point);
 	return (0);
 }

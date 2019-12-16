@@ -126,12 +126,9 @@ void			ft_parsing(t_pointers *point, int ac, char **str)
 {
 	int			fd;
 	char		*line;
-	const char *aaa = "/Users/ymanilow/curcus42/fdf/test_maps/julia.fdf";
 
-//	if (ac != 2)
-//		ft_error("wrong number of arguments\n", 2);
 	if (ac != 2)
-		fd = open(aaa, O_RDONLY);
+		ft_error("wrong number of arguments\n", 2);
 	else
 		fd = open(str[1], O_RDONLY);
 	if (fd < 0)
