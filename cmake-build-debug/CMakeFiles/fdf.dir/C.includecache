@@ -36,6 +36,10 @@ stdarg.h
 
 /Users/ymanilow/curcus42/fdf/mlx/mlx.h
 
+/Users/ymanilow/curcus42/fdf/sources/drawing_matrix.c
+fdf.h
+/Users/ymanilow/curcus42/fdf/sources/fdf.h
+
 /Users/ymanilow/curcus42/fdf/sources/fdf.h
 ../mlx/mlx.h
 /Users/ymanilow/curcus42/fdf/mlx/mlx.h
@@ -43,8 +47,4 @@ stdarg.h
 /Users/ymanilow/curcus42/fdf/ft_printf/ft_printf.h
 math.h
 -
-
-/Users/ymanilow/curcus42/fdf/sources/point_functions.c
-fdf.h
-/Users/ymanilow/curcus42/fdf/sources/fdf.h
 
