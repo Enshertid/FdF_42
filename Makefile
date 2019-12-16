@@ -6,7 +6,7 @@
 #    By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 10:58:26 by ymanilow          #+#    #+#              #
-#    Updated: 2019/12/16 19:01:16 by ymanilow         ###   ########.fr        #
+#    Updated: 2019/12/16 19:39:56 by ymanilow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,10 @@ NAME = fdf
 SRCS_C = ./sources/fdf.c ./sources/parsing.c ./sources/work_with_angle_consistent.c\
 ./sources/point_functions.c ./sources/drawing_lines.c ./sources/drawing_matrix.c\
 ./sources/treatment_of_signals.c ./sources/work_with_angles.c sources/point_list_functions.c\
-./sources/keyboard.c\
+./sources/keyboard.c ./sources/mouse.c\
 
 SRCS_O = $(SRCS_C:.c=.o)
 
-HEADER = fdf.h
 
 LIBMLX = -L ./mlx/ -l mlx -framework OpenGL -framework AppKit
 
@@ -30,7 +29,7 @@ all: $(NAME)
 %.o: sources/%.c
 	@gcc -Wall -Wextra -Werror -c $(SRCS_C)
 
-$(NAME): $(SRCS_O) $(HEADER)
+$(NAME): $(SRCS_O)
 	@make -C ./mlx/
 	@make -C ./ft_printf/
 	@gcc -Wall -Wextra -Werror -Isources/ -Imlx/ $(LIBMLX) $(LIB) $(SRCS_O) -o $(NAME)
