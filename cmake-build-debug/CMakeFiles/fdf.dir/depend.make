@@ -28,6 +28,12 @@ CMakeFiles/fdf.dir/sources/keyboard.c.o: ../mlx/mlx.h
 CMakeFiles/fdf.dir/sources/keyboard.c.o: ../sources/fdf.h
 CMakeFiles/fdf.dir/sources/keyboard.c.o: ../sources/keyboard.c
 
+CMakeFiles/fdf.dir/sources/mouse.c.o: ../ft_printf/ft_printf.h
+CMakeFiles/fdf.dir/sources/mouse.c.o: ../ft_printf/libft/includes/libft.h
+CMakeFiles/fdf.dir/sources/mouse.c.o: ../mlx/mlx.h
+CMakeFiles/fdf.dir/sources/mouse.c.o: ../sources/fdf.h
+CMakeFiles/fdf.dir/sources/mouse.c.o: ../sources/mouse.c
+
 CMakeFiles/fdf.dir/sources/parsing.c.o: ../ft_printf/ft_printf.h
 CMakeFiles/fdf.dir/sources/parsing.c.o: ../ft_printf/libft/includes/libft.h
 CMakeFiles/fdf.dir/sources/parsing.c.o: ../mlx/mlx.h

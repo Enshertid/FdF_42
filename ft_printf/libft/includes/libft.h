@@ -6,7 +6,7 @@
 /*   By: dbendu <dbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 20:28:39 by dbendu            #+#    #+#             */
-/*   Updated: 2019/11/29 14:46:49 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/16 12:55:45 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 # define MAX_LLONG		(9223372036854775807ll)
 # define MIN_LLONG		-MAX_LLONG
 # define GNL_BUFF_SIZE	1000
+# define TRUE 1
+# define FALSE 0
 
 # define ULL			unsigned long long
 # define UL				unsigned long
@@ -47,10 +49,13 @@ typedef struct			s_dlist
 	struct s_dlist		*end;
 }						t_dlist;
 
+typedef	char t_bool;
+
 int						ft_is_hex(char c);
 
 int						ft_get_next_line(int fd, char **line);
 int						ft_mod_num(int num);
+void					ft_error(const char *error_msg, int error_code);
 
 void					ft_lstpop(t_list **list);
 void					ft_lstpurge(t_list **list);
@@ -155,7 +160,6 @@ long double				ft_dpow(long double num, int n);
 void					print_bits(void *a, size_t size);
 void					printn_bits(void *a, size_t size);
 unsigned long long		ft_ipow(unsigned long long num, int n);
-void					error(const char *error_msg, int error_code);
 char					*ft_itoa(long long int num);
 
 #endif

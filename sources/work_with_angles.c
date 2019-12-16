@@ -58,11 +58,11 @@ void				ft_change_angle(t_pointers *point, int key)
 	if (key == X_DOWN || key == Z_DOWN || key == Y_LEFT)
 		d = -1;
 	if (key == X_UP || key == X_DOWN)
-		point->angle.angle_x += 0.174533 * d;
+		point->angle.angle_x += ANGLE * d;
 	else if (key == Z_DOWN || key == Z_UP)
-		point->angle.angle_z += 0.174533 * d;
+		point->angle.angle_z += ANGLE * d;
 	else if (key == Y_RIGHT || key == Y_LEFT)
-		point->angle.angle_y += 0.174533 * d;
+		point->angle.angle_y += ANGLE * d;
 	if (point->angle.angle_x == 1 || point->angle.angle_x == -1)
 		point->angle.angle_x = 0;
 	if (point->angle.angle_y == 1 || point->angle.angle_y == -1)

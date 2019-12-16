@@ -258,6 +258,33 @@ sources/keyboard.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/keyboard.c.s
 .PHONY : sources/keyboard.c.s
 
+sources/mouse.o: sources/mouse.c.o
+
+.PHONY : sources/mouse.o
+
+# target to build an object file
+sources/mouse.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/mouse.c.o
+.PHONY : sources/mouse.c.o
+
+sources/mouse.i: sources/mouse.c.i
+
+.PHONY : sources/mouse.i
+
+# target to preprocess a source file
+sources/mouse.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/mouse.c.i
+.PHONY : sources/mouse.c.i
+
+sources/mouse.s: sources/mouse.c.s
+
+.PHONY : sources/mouse.s
+
+# target to generate assembly for a file
+sources/mouse.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/mouse.c.s
+.PHONY : sources/mouse.c.s
+
 sources/parsing.o: sources/parsing.c.o
 
 .PHONY : sources/parsing.o
@@ -444,6 +471,9 @@ help:
 	@echo "... sources/keyboard.o"
 	@echo "... sources/keyboard.i"
 	@echo "... sources/keyboard.s"
+	@echo "... sources/mouse.o"
+	@echo "... sources/mouse.i"
+	@echo "... sources/mouse.s"
 	@echo "... sources/parsing.o"
 	@echo "... sources/parsing.i"
 	@echo "... sources/parsing.s"

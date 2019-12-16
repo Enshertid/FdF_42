@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fdf.dir/sources/drawing_matrix.c.o"
   "CMakeFiles/fdf.dir/sources/fdf.c.o"
   "CMakeFiles/fdf.dir/sources/keyboard.c.o"
+  "CMakeFiles/fdf.dir/sources/mouse.c.o"
   "CMakeFiles/fdf.dir/sources/parsing.c.o"
   "CMakeFiles/fdf.dir/sources/point_functions.c.o"
   "CMakeFiles/fdf.dir/sources/point_list_functions.c.o"

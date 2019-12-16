@@ -15,7 +15,7 @@ add_executable(fdf
         sources/parsing.c
         sources/drawing_lines.c
         sources/drawing_matrix.c
-        sources/drawing_matrix.c sources/treatment_of_signals.c sources/work_with_angles.c sources/work_with_angle_consistent.c sources/keyboard.c sources/point_list_functions.c ft_printf/libft/ft_is_hex.c)
+        sources/drawing_matrix.c sources/treatment_of_signals.c sources/work_with_angles.c sources/work_with_angle_consistent.c sources/keyboard.c sources/point_list_functions.c ft_printf/libft/ft_is_hex.c sources/mouse.c)
 
 target_link_libraries(fdf ${CMAKE_SOURCE_DIR}/ft_printf/libftprintf.a)
 target_link_libraries(fdf  ${CMAKE_SOURCE_DIR}/mlx/libmlx.a)

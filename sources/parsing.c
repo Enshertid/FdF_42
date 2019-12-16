@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:49 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/15 18:05:27 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/16 18:06:37 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,11 +126,14 @@ void			ft_parsing(t_pointers *point, int ac, char **str)
 {
 	int			fd;
 	char		*line;
+	const char *aaa = "/Users/ymanilow/curcus42/fdf/test_maps/julia.fdf";
 
-
+//	if (ac != 2)
+//		ft_error("wrong number of arguments\n", 2);
 	if (ac != 2)
-		ft_error("wrong number of arguments\n", 2);
-	fd = open(str[1], O_RDONLY);
+		fd = open(aaa, O_RDONLY);
+	else
+		fd = open(str[1], O_RDONLY);
 	if (fd < 0)
 		ft_error ("wrong file\n", 2);
 	ft_printf("str[1] = %s\n", str[1]);
@@ -142,13 +145,5 @@ void			ft_parsing(t_pointers *point, int ac, char **str)
 	}
 	ft_check_size(point);
 	ft_copy_matrix(&point->mtrx, point);
-	int i = -1;
-	int j = -1;
-	while (++i < point->mtrx.ln_y)
-	{
-		while (point->mtrx.color[i][++j])
-			ft_printf("COLOR == %d\n", point->mtrx.color[i][j]);
-		j = -1;
-	}
-	point->base.flag_first = 1;
+	point->mod.flag_first = TRUE;
 }

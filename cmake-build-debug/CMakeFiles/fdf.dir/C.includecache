@@ -22,10 +22,6 @@ libft/includes/libft.h
 stddef.h
 -
 
-/Users/ymanilow/curcus42/fdf/ft_printf/libft/ft_is_hex.c
-includes/libft.h
-/Users/ymanilow/curcus42/fdf/ft_printf/libft/includes/libft.h
-
 /Users/ymanilow/curcus42/fdf/ft_printf/libft/includes/libft.h
 stdlib.h
 -
@@ -40,18 +36,6 @@ stdarg.h
 
 /Users/ymanilow/curcus42/fdf/mlx/mlx.h
 
-/Users/ymanilow/curcus42/fdf/sources/drawing_lines.c
-fdf.h
-/Users/ymanilow/curcus42/fdf/sources/fdf.h
-
-/Users/ymanilow/curcus42/fdf/sources/drawing_matrix.c
-fdf.h
-/Users/ymanilow/curcus42/fdf/sources/fdf.h
-
-/Users/ymanilow/curcus42/fdf/sources/fdf.c
-fdf.h
-/Users/ymanilow/curcus42/fdf/sources/fdf.h
-
 /Users/ymanilow/curcus42/fdf/sources/fdf.h
 ../mlx/mlx.h
 /Users/ymanilow/curcus42/fdf/mlx/mlx.h
@@ -60,31 +44,7 @@ fdf.h
 math.h
 -
 
-/Users/ymanilow/curcus42/fdf/sources/keyboard.c
-fdf.h
-/Users/ymanilow/curcus42/fdf/sources/fdf.h
-
 /Users/ymanilow/curcus42/fdf/sources/parsing.c
-fdf.h
-/Users/ymanilow/curcus42/fdf/sources/fdf.h
-
-/Users/ymanilow/curcus42/fdf/sources/point_functions.c
-fdf.h
-/Users/ymanilow/curcus42/fdf/sources/fdf.h
-
-/Users/ymanilow/curcus42/fdf/sources/point_list_functions.c
-fdf.h
-/Users/ymanilow/curcus42/fdf/sources/fdf.h
-
-/Users/ymanilow/curcus42/fdf/sources/treatment_of_signals.c
-fdf.h
-/Users/ymanilow/curcus42/fdf/sources/fdf.h
-
-/Users/ymanilow/curcus42/fdf/sources/work_with_angle_consistent.c
-fdf.h
-/Users/ymanilow/curcus42/fdf/sources/fdf.h
-
-/Users/ymanilow/curcus42/fdf/sources/work_with_angles.c
 fdf.h
 /Users/ymanilow/curcus42/fdf/sources/fdf.h
 

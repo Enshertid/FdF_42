@@ -1,9 +1,7 @@
 NAME = libft.a
 
-NAME_DEBUG = glibft.a
-
 SRCS =	ft_abs.c								\
-		error.c									\
+		ft_error.c									\
 		ft_swap.c								\
 		ft_dpow.c								\
 		ft_ipow.c								\
@@ -81,12 +79,8 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@rm -f $(NAME_DEBUG)
-
 
 re: fclean all
-
-
 
 
 c: clean
@@ -94,16 +88,3 @@ c: clean
 
 f: fclean
 
-
-g:
-	@gcc -g $(FLAGS) -c $(SRCS)
-	@ar rcs $(NAME_DEBUG) $(OBJ)
-	@ranlib $(NAME_DEBUG)
-
-
-t:
-	@make
-	@clear
-	@gcc -Wall -Werror -Wextra main.c libft.a
-	@clear
-	@./a.out

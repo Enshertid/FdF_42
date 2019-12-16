@@ -28,6 +28,12 @@ CMakeFiles/fdf.dir/sources/keyboard.c.o
  /Users/ymanilow/curcus42/fdf/mlx/mlx.h
  /Users/ymanilow/curcus42/fdf/sources/fdf.h
  /Users/ymanilow/curcus42/fdf/sources/keyboard.c
+CMakeFiles/fdf.dir/sources/mouse.c.o
+ /Users/ymanilow/curcus42/fdf/ft_printf/ft_printf.h
+ /Users/ymanilow/curcus42/fdf/ft_printf/libft/includes/libft.h
+ /Users/ymanilow/curcus42/fdf/mlx/mlx.h
+ /Users/ymanilow/curcus42/fdf/sources/fdf.h
+ /Users/ymanilow/curcus42/fdf/sources/mouse.c
 CMakeFiles/fdf.dir/sources/parsing.c.o
  /Users/ymanilow/curcus42/fdf/ft_printf/ft_printf.h
  /Users/ymanilow/curcus42/fdf/ft_printf/libft/includes/libft.h
