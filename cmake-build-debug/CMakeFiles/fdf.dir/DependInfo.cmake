@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/ymanilow/curcus42/fdf/sources/costyl.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/costyl.c.o"
+  "/Users/ymanilow/curcus42/fdf/sources/draw_matrix_on_iso.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/draw_matrix_on_iso.c.o"
   "/Users/ymanilow/curcus42/fdf/sources/drawing_lines.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/drawing_lines.c.o"
   "/Users/ymanilow/curcus42/fdf/sources/drawing_matrix.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/drawing_matrix.c.o"
   "/Users/ymanilow/curcus42/fdf/sources/fdf.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/fdf.c.o"

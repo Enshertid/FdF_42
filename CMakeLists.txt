@@ -24,7 +24,9 @@ add_executable(fdf
         sources/work_with_angle_consistent.c
         sources/keyboard.c
         sources/point_list_functions.c
-        sources/mouse.c)
+        sources/mouse.c
+        sources/costyl.c
+        sources/draw_matrix_on_iso.c)
 
 target_link_libraries(fdf ${CMAKE_SOURCE_DIR}/libft/libft.a)
 target_link_libraries(fdf  ${CMAKE_SOURCE_DIR}/mlx/libmlx.a)

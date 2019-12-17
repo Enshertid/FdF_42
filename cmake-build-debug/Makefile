@@ -123,6 +123,60 @@ fdf/fast:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/build
 .PHONY : fdf/fast
 
+sources/costyl.o: sources/costyl.c.o
+
+.PHONY : sources/costyl.o
+
+# target to build an object file
+sources/costyl.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/costyl.c.o
+.PHONY : sources/costyl.c.o
+
+sources/costyl.i: sources/costyl.c.i
+
+.PHONY : sources/costyl.i
+
+# target to preprocess a source file
+sources/costyl.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/costyl.c.i
+.PHONY : sources/costyl.c.i
+
+sources/costyl.s: sources/costyl.c.s
+
+.PHONY : sources/costyl.s
+
+# target to generate assembly for a file
+sources/costyl.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/costyl.c.s
+.PHONY : sources/costyl.c.s
+
+sources/draw_matrix_on_iso.o: sources/draw_matrix_on_iso.c.o
+
+.PHONY : sources/draw_matrix_on_iso.o
+
+# target to build an object file
+sources/draw_matrix_on_iso.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/draw_matrix_on_iso.c.o
+.PHONY : sources/draw_matrix_on_iso.c.o
+
+sources/draw_matrix_on_iso.i: sources/draw_matrix_on_iso.c.i
+
+.PHONY : sources/draw_matrix_on_iso.i
+
+# target to preprocess a source file
+sources/draw_matrix_on_iso.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/draw_matrix_on_iso.c.i
+.PHONY : sources/draw_matrix_on_iso.c.i
+
+sources/draw_matrix_on_iso.s: sources/draw_matrix_on_iso.c.s
+
+.PHONY : sources/draw_matrix_on_iso.s
+
+# target to generate assembly for a file
+sources/draw_matrix_on_iso.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/draw_matrix_on_iso.c.s
+.PHONY : sources/draw_matrix_on_iso.c.s
+
 sources/drawing_lines.o: sources/drawing_lines.c.o
 
 .PHONY : sources/drawing_lines.o
@@ -429,6 +483,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fdf"
+	@echo "... sources/costyl.o"
+	@echo "... sources/costyl.i"
+	@echo "... sources/costyl.s"
+	@echo "... sources/draw_matrix_on_iso.o"
+	@echo "... sources/draw_matrix_on_iso.i"
+	@echo "... sources/draw_matrix_on_iso.s"
 	@echo "... sources/drawing_lines.o"
 	@echo "... sources/drawing_lines.i"
 	@echo "... sources/drawing_lines.s"

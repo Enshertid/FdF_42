@@ -93,6 +93,12 @@
 		<Unit filename="/Users/ymanilow/curcus42/fdf/includes/fdf.h">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/costyl.c">
+			<Option target="fdf"/>
+		</Unit>
+		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/draw_matrix_on_iso.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/drawing_lines.c">
 			<Option target="fdf"/>
 		</Unit>

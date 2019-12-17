@@ -6,7 +6,7 @@
 /*   By: ymanilow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:13:41 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/17 19:12:20 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/17 20:59:08 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,12 @@ int					ft_mouse_press(int button, int x, int y, t_pointers *point);
 int					ft_mouse_release(int button, int x, int y, t_pointers *point);
 int					ft_mouse_movement(int x, int y, t_pointers *point);
 int					ft_free_exit(t_pointers *point);
+
+void				ft_add_pixel(t_pointers *p, t_dot dot_s);
+void				ft_funct_for_draw(t_pointers *p, int color_s,
+										int color_e, t_dot *dot_s);
+void				ft_cycle_cost(t_pointers *p, t_dot *dot_s);
+int					ft_costylishe(t_pointers *p, int *lnx, int *lny, int *ln);
 
 void				ft_movement(t_pointers *point, int x, int y);
 void				ft_angle_movement(t_pointers *point, int x, int y);
