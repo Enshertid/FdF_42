@@ -123,33 +123,6 @@ fdf/fast:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/build
 .PHONY : fdf/fast
 
-ft_printf/libft/ft_is_hex.o: ft_printf/libft/ft_is_hex.c.o
-
-.PHONY : ft_printf/libft/ft_is_hex.o
-
-# target to build an object file
-ft_printf/libft/ft_is_hex.c.o:
-	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.o
-.PHONY : ft_printf/libft/ft_is_hex.c.o
-
-ft_printf/libft/ft_is_hex.i: ft_printf/libft/ft_is_hex.c.i
-
-.PHONY : ft_printf/libft/ft_is_hex.i
-
-# target to preprocess a source file
-ft_printf/libft/ft_is_hex.c.i:
-	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.i
-.PHONY : ft_printf/libft/ft_is_hex.c.i
-
-ft_printf/libft/ft_is_hex.s: ft_printf/libft/ft_is_hex.c.s
-
-.PHONY : ft_printf/libft/ft_is_hex.s
-
-# target to generate assembly for a file
-ft_printf/libft/ft_is_hex.c.s:
-	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.s
-.PHONY : ft_printf/libft/ft_is_hex.c.s
-
 sources/drawing_lines.o: sources/drawing_lines.c.o
 
 .PHONY : sources/drawing_lines.o
@@ -456,9 +429,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fdf"
-	@echo "... ft_printf/libft/ft_is_hex.o"
-	@echo "... ft_printf/libft/ft_is_hex.i"
-	@echo "... ft_printf/libft/ft_is_hex.s"
 	@echo "... sources/drawing_lines.o"
 	@echo "... sources/drawing_lines.i"
 	@echo "... sources/drawing_lines.s"

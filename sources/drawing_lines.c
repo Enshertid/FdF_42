@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 void				ft_print_line_img(t_pointers *p, t_dot dot_s, int color)
 {

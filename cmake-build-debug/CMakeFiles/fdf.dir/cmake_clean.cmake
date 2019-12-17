@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.o"
   "CMakeFiles/fdf.dir/sources/drawing_lines.c.o"
   "CMakeFiles/fdf.dir/sources/drawing_matrix.c.o"
   "CMakeFiles/fdf.dir/sources/fdf.c.o"

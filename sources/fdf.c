@@ -6,27 +6,11 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:58:38 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/16 21:03:02 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/17 13:30:22 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
-
-/*
-Left button — 1
-
-Right button — 2
-
-Third (Middle) button — 3
-
-Scroll Up — 4
-
-Scroll Down — 5
-
-Scroll Left — 6
-
-Scroll Right — 7
- */
+#include "../includes/fdf.h"
 
 int					ft_free_exit(t_pointers *point)
 {

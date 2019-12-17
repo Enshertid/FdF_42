@@ -6,11 +6,17 @@
 #    By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 10:58:26 by ymanilow          #+#    #+#              #
-#    Updated: 2019/12/16 19:39:56 by ymanilow         ###   ########.fr        #
+#    Updated: 2019/12/17 13:06:06 by ymanilow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
+
+DIR_SRCS_S = sources
+
+DIR_O = obj
+
+FLAGS = -Wall -Wextra -Werror
 
 SRCS_C = ./sources/fdf.c ./sources/parsing.c ./sources/work_with_angle_consistent.c\
 ./sources/point_functions.c ./sources/drawing_lines.c ./sources/drawing_matrix.c\
@@ -23,6 +29,7 @@ SRCS_O = $(SRCS_C:.c=.o)
 LIBMLX = -L ./mlx/ -l mlx -framework OpenGL -framework AppKit
 
 LIB = ./ft_printf/libftprintf.a
+
 
 all: $(NAME)
 
@@ -54,3 +61,4 @@ c:
 	@make clean -C ./ft_printf/
 	@rm -Rf $(SRCS_O)
 	clear
+

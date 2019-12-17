@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/ymanilow/curcus42/fdf/ft_printf/libft/ft_is_hex.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.o"
   "/Users/ymanilow/curcus42/fdf/sources/drawing_lines.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/drawing_lines.c.o"
   "/Users/ymanilow/curcus42/fdf/sources/drawing_matrix.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/drawing_matrix.c.o"
   "/Users/ymanilow/curcus42/fdf/sources/fdf.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/fdf.c.o"
@@ -23,6 +22,7 @@ set(CMAKE_C_COMPILER_ID "AppleClang")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../mlx"
   "../sources"
+  "../includes"
   )
 
 # Targets to which this target links.
