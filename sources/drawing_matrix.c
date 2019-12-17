@@ -6,11 +6,11 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 22:34:30 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/17 15:38:51 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/16 19:47:40 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 void				ft_draw_matrix_img_iso(t_pointers *p)
 {
@@ -76,10 +76,16 @@ void				ft_draw_matrix_img(t_pointers *p)
 				ft_check_angle(p, &p->dot_e.x, &p->dot_e.y, &p->dot_e.z);
 				p->dot_e.x += p->base.start_x + p->mtrx.ln_x / 2 * p->base.size;
 				p->dot_e.y += p->base.start_y + p->mtrx.ln_y / 2 * p->base.size;
-				if (p->mtrx.array[j][i] != p->base.z_min || p->mtrx.array[j][i + 1] != p->base.z_min)
+				if (p->mod.grad)
 					ft_print_line_img_grad(p, p->dot_s, p->mtrx.color[j][i], p->mtrx.color[j][i + 1]);
 				else
-					ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i]);
+				{
+					if (p->mtrx.color[j][i + 1] == p->color.custom_color)
+						ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i + 1]);
+					else
+						ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i]);
+				}
+
 			}
 			if (j != p->mtrx.ln_y - 1)
 			{
@@ -89,10 +95,15 @@ void				ft_draw_matrix_img(t_pointers *p)
 				ft_check_angle(p, &p->dot_e.x, &p->dot_e.y, &p->dot_e.z);
 				p->dot_e.x += p->base.start_x + p->mtrx.ln_x / 2 * p->base.size;
 				p->dot_e.y += p->base.start_y + p->mtrx.ln_y / 2 * p->base.size;
-				if (p->mtrx.array[j][i] != p->base.z_min || p->mtrx.array[j + 1][i] != p->base.z_min)
+				if (p->mod.grad)
 					ft_print_line_img_grad(p, p->dot_s, p->mtrx.color[j][i], p->mtrx.color[j + 1][i]);
 				else
-					ft_print_line_img(p, p->dot_s,p->mtrx.color[j][i]);
+				{
+					if (p->mtrx.color[j + 1][i] == p->color.custom_color)
+						ft_print_line_img(p, p->dot_s, p->mtrx.color[j + 1][i]);
+					else
+						ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i]);
+				}
 			}
 		}
 		i = -1;

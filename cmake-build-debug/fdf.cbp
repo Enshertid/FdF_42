@@ -46,6 +46,7 @@
 				<Compiler>
 					<Add directory="/Users/ymanilow/curcus42/fdf/mlx"/>
 					<Add directory="/Users/ymanilow/curcus42/fdf/sources"/>
+					<Add directory="/Users/ymanilow/curcus42/fdf/includes"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -69,6 +70,7 @@
 				<Compiler>
 					<Add directory="/Users/ymanilow/curcus42/fdf/mlx"/>
 					<Add directory="/Users/ymanilow/curcus42/fdf/sources"/>
+					<Add directory="/Users/ymanilow/curcus42/fdf/includes"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -84,7 +86,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/ymanilow/curcus42/fdf/ft_printf/libft/ft_is_hex.c">
+		<Unit filename="/Users/ymanilow/curcus42/fdf/includes/fdf.h">
 			<Option target="fdf"/>
 		</Unit>
 		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/drawing_lines.c">
@@ -96,10 +98,10 @@
 		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/fdf.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/fdf.h">
+		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/keyboard.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/keyboard.c">
+		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/mouse.c">
 			<Option target="fdf"/>
 		</Unit>
 		<Unit filename="/Users/ymanilow/curcus42/fdf/sources/parsing.c">

@@ -187,18 +187,18 @@ CMakeFiles/fdf.dir/sources/point_list_functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/sources/point_list_functions.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ymanilow/curcus42/fdf/sources/point_list_functions.c -o CMakeFiles/fdf.dir/sources/point_list_functions.c.s
 
-CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.o: CMakeFiles/fdf.dir/flags.make
-CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.o: ../ft_printf/libft/ft_is_hex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.o   -c /Users/ymanilow/curcus42/fdf/ft_printf/libft/ft_is_hex.c
+CMakeFiles/fdf.dir/sources/mouse.c.o: CMakeFiles/fdf.dir/flags.make
+CMakeFiles/fdf.dir/sources/mouse.c.o: ../sources/mouse.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/fdf.dir/sources/mouse.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/sources/mouse.c.o   -c /Users/ymanilow/curcus42/fdf/sources/mouse.c
 
-CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ymanilow/curcus42/fdf/ft_printf/libft/ft_is_hex.c > CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.i
+CMakeFiles/fdf.dir/sources/mouse.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/sources/mouse.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ymanilow/curcus42/fdf/sources/mouse.c > CMakeFiles/fdf.dir/sources/mouse.c.i
 
-CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ymanilow/curcus42/fdf/ft_printf/libft/ft_is_hex.c -o CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.s
+CMakeFiles/fdf.dir/sources/mouse.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/sources/mouse.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ymanilow/curcus42/fdf/sources/mouse.c -o CMakeFiles/fdf.dir/sources/mouse.c.s
 
 # Object files for target fdf
 fdf_OBJECTS = \
@@ -212,7 +212,7 @@ fdf_OBJECTS = \
 "CMakeFiles/fdf.dir/sources/work_with_angle_consistent.c.o" \
 "CMakeFiles/fdf.dir/sources/keyboard.c.o" \
 "CMakeFiles/fdf.dir/sources/point_list_functions.c.o" \
-"CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.o"
+"CMakeFiles/fdf.dir/sources/mouse.c.o"
 
 # External object files for target fdf
 fdf_EXTERNAL_OBJECTS =
@@ -227,7 +227,7 @@ fdf: CMakeFiles/fdf.dir/sources/work_with_angles.c.o
 fdf: CMakeFiles/fdf.dir/sources/work_with_angle_consistent.c.o
 fdf: CMakeFiles/fdf.dir/sources/keyboard.c.o
 fdf: CMakeFiles/fdf.dir/sources/point_list_functions.c.o
-fdf: CMakeFiles/fdf.dir/ft_printf/libft/ft_is_hex.c.o
+fdf: CMakeFiles/fdf.dir/sources/mouse.c.o
 fdf: CMakeFiles/fdf.dir/build.make
 fdf: ../ft_printf/libftprintf.a
 fdf: ../mlx/libmlx.a

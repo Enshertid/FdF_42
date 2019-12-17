@@ -10,24 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
-/*
-Left button — 1
+int					ft_free_exit(t_pointers *point)
+{
+	t_matr			*tmp;
+	int				j;
 
-Right button — 2
+	tmp = point->matr;
+	while (tmp)
+	{
+		point->matr = tmp;
+		free(point->matr->array);
+		free(point->matr->color);
+		tmp = tmp->next;
+		free(point->matr);
+	}
+	j = -1;
+	while (++j < point->mtrx.ln_y)
+		free(point->mtrx.array[j]);
+	j = -1;
+	while (++j < point->mtrx.ln_y)
+		free(point->mtrx.color[j]);
+	mlx_destroy_image(point->mlx_ptr, point->img.img_ptr);
+	mlx_destroy_window(point->mlx_ptr, point->win_ptr);
+	exit(0);
+}
 
-Third (Middle) button — 3
-
-Scroll Up — 4
-
-Scroll Down — 5
-
-Scroll Left — 6
-
-Scroll Right — 7
- */
-int		main(int ac, char **av)
+int					main(int ac, char **av)
 {
 	t_pointers		point;
 	
@@ -44,8 +54,9 @@ int		main(int ac, char **av)
 	mlx_hook(point.win_ptr, 4, 0, ft_mouse_press, &point);
 	mlx_hook(point.win_ptr, 6, 0, ft_mouse_movement, &point);
 	mlx_hook(point.win_ptr, 5, 0, ft_mouse_release, &point);
+	mlx_hook(point.win_ptr, 17, 0, ft_free_exit, &point);
 	mlx_clear_window(point.mlx_ptr, point.win_ptr);
 	mlx_loop(point.mlx_ptr);
-	mlx_destroy_image(point.mlx_ptr, point.win_ptr);
+	ft_free_exit(&point);
 	return (0);
 }

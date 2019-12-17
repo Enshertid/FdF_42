@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../includes/fdf.h"
 
 void			ft_check_line(t_pointers *point, char *line)
 {
@@ -126,14 +126,10 @@ void			ft_parsing(t_pointers *point, int ac, char **str)
 {
 	int			fd;
 	char		*line;
-	const char *aaa = "/Users/ymanilow/curcus42/fdf/test_maps/julia.fdf";
 
-//	if (ac != 2)
-//		ft_error("wrong number of arguments\n", 2);
 	if (ac != 2)
-		fd = open(aaa, O_RDONLY);
-	else
-		fd = open(str[1], O_RDONLY);
+		ft_error("wrong number of arguments\n", 2);
+	fd = open(str[1], O_RDONLY);
 	if (fd < 0)
 		ft_error ("wrong file\n", 2);
 	ft_printf("str[1] = %s\n", str[1]);

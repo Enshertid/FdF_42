@@ -6,7 +6,7 @@
 /*   By: ymanilow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:13:41 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/16 19:36:24 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/17 13:30:22 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@
 # define ANGLE_MOUSE 0.0872665
 # define ANGLE 0.174533
 
-# include "../mlx/mlx.h"
-# include "../ft_printf/ft_printf.h"
+# include "mlx.h"
+# include "../libftprintf/includes/ft_printf.h"
 # include <math.h>
 
 typedef struct		s_image
@@ -146,11 +146,11 @@ typedef struct		s_dot
 typedef struct		s_pointers
 {
 	t_image			img;
-	t_dot			dot_s;
-	t_dot			dot_e;
 	t_base			base;
 	t_mtrx			mtrx;
 	t_matr			*matr;
+	t_dot			dot_e;
+	t_dot			dot_s;
 	t_angle			angle;
 	t_color			color;
 	t_mouse			mouse;
@@ -182,6 +182,12 @@ int					ft_key_release(int key, t_pointers *point);
 int					ft_mouse_press(int button, int x, int y, t_pointers *point);
 int					ft_mouse_release(int button, int x, int y, t_pointers *point);
 int					ft_mouse_movement(int x, int y, t_pointers *point);
+int					ft_key_hook_img(int key, t_pointers *point);
+int					ft_key_release(int key, t_pointers *point);
+int					ft_mouse_press(int button, int x, int y, t_pointers *point);
+int					ft_mouse_release(int button, int x, int y, t_pointers *point);
+int					ft_mouse_movement(int x, int y, t_pointers *point);
+int					ft_free_exit(t_pointers *point);
 
 void				ft_movement(t_pointers *point, int x, int y);
 void				ft_angle_movement(t_pointers *point, int x, int y);
