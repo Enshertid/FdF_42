@@ -6,7 +6,7 @@
 /*   By: ymanilow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:13:41 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/17 11:51:18 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/17 13:30:22 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@
 # define ANGLE 0.174533
 
 # include "mlx.h"
-# include "../ft_printf/includes/ft_printf.h"
+# include "../libftprintf/includes/ft_printf.h"
 # include <math.h>
 
 typedef struct		s_image

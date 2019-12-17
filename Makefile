@@ -6,7 +6,7 @@
 #    By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 10:58:26 by ymanilow          #+#    #+#              #
-#    Updated: 2019/12/17 13:06:06 by ymanilow         ###   ########.fr        #
+#    Updated: 2019/12/17 14:32:55 by ymanilow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS_O = $(SRCS_C:.c=.o)
 
 LIBMLX = -L ./mlx/ -l mlx -framework OpenGL -framework AppKit
 
-LIB = ./ft_printf/libftprintf.a
+LIB = ./libftprintf/libftprintf.a
 
 
 all: $(NAME)
@@ -38,15 +38,15 @@ all: $(NAME)
 
 $(NAME): $(SRCS_O)
 	@make -C ./mlx/
-	@make -C ./ft_printf/
+	@make -C ./libftprintf
 	@gcc -Wall -Wextra -Werror -Isources/ -Imlx/ $(LIBMLX) $(LIB) $(SRCS_O) -o $(NAME)
 
 clean:
-	@make clean -C ./ft_printf
+	@make clean -C ./libftprintf
 	@rm -Rf $(SRCS_O)
 
 fclean: clean
-	@make fclean -C ./ft_printf/
+	@make fclean -C ./libftprintf
 	@make clean -C ./mlx/
 	@rm -Rf ./fdf
 	
