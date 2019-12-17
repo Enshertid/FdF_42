@@ -23,6 +23,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../mlx"
   "../sources"
   "../includes"
+  "../libft/includes_p"
+  "../libft/includes_l"
   )
 
 # Targets to which this target links.

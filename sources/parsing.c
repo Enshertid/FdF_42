@@ -6,13 +6,13 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:49 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/17 15:55:05 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/17 17:25:25 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
-void			ft_check_line(t_pointers *point, char *line)
+void			ft_check_line(char *line)
 {
 	while (*line)
 	{
@@ -135,7 +135,7 @@ void			ft_parsing(t_pointers *point, int ac, char **str)
 	ft_printf("str[1] = %s\n", str[1]);
 	while (ft_get_next_line(fd, &line) > 0)
 	{
-		ft_check_line(point, line);
+		ft_check_line(line);
 		ft_pars_line(point, line);
 		ft_strdel(&line);
 	}

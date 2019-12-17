@@ -49,7 +49,7 @@
 # define ANGLE 0.174533
 
 # include "mlx.h"
-# include "../libftprintf/includes/ft_printf.h"
+# include "libft.h"
 # include <math.h>
 
 typedef struct		s_image

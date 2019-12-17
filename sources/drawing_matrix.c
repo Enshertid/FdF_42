@@ -6,11 +6,11 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 22:34:30 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/16 19:47:40 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/17 15:42:45 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 void				ft_draw_matrix_img_iso(t_pointers *p)
 {

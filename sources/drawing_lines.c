@@ -47,11 +47,6 @@ void				ft_print_line_img(t_pointers *p, t_dot dot_s, int color)
 	}
 }
 
-void			ft_use_grad(t_pointers *p)
-{
-
-}
-
 void			ft_print_line_img_grad(t_pointers *p, t_dot dot_s, int color_s, int color_e)
 {
 	int		lnx;

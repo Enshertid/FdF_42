@@ -6,58 +6,50 @@
 #    By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 10:58:26 by ymanilow          #+#    #+#              #
-#    Updated: 2019/12/17 14:32:55 by ymanilow         ###   ########.fr        #
+#    Updated: 2019/12/17 18:47:10 by ymanilow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
 
-DIR_SRCS_S = sources
+DIR_S = sources
 
 DIR_O = obj
 
-FLAGS = -Wall -Wextra -Werror
+DIR_H = includes/
 
-SRCS_C = ./sources/fdf.c ./sources/parsing.c ./sources/work_with_angle_consistent.c\
-./sources/point_functions.c ./sources/drawing_lines.c ./sources/drawing_matrix.c\
-./sources/treatment_of_signals.c ./sources/work_with_angles.c sources/point_list_functions.c\
-./sources/keyboard.c ./sources/mouse.c\
+LIB = ./libft/
 
-SRCS_O = $(SRCS_C:.c=.o)
+LIBMLX =  -Imlx/ -L ./mlx/ -l mlx -framework OpenGL -framework AppKit
 
+FLAGS = -Wall -Wextra -Werror -I$(DIR_H) -I$(LIB)includes_l -I$(LIB)includes_p
 
-LIBMLX = -L ./mlx/ -l mlx -framework OpenGL -framework AppKit
+SRCS_C = fdf.c	parsing.c	work_with_angle_consistent.c				\
+	point_functions.c	drawing_lines.c	drawing_matrix.c				\
+	treatment_of_signals.c	work_with_angles.c	point_list_functions.c	\
+	keyboard.c mouse.c													\
 
-LIB = ./libftprintf/libftprintf.a
-
+SRCS_O = $(addprefix $(DIR_O)/,$(SRCS_C:.c=.o))
 
 all: $(NAME)
 
-%.o: sources/%.c
-	@gcc -Wall -Wextra -Werror -c $(SRCS_C)
+$(DIR_O)/%.o: $(DIR_S)/%.c
+	@mkdir -p $(DIR_O)
+	@$(CC) $(FLAGS) -o $@ -c $<
 
 $(NAME): $(SRCS_O)
 	@make -C ./mlx/
-	@make -C ./libftprintf
-	@gcc -Wall -Wextra -Werror -Isources/ -Imlx/ $(LIBMLX) $(LIB) $(SRCS_O) -o $(NAME)
+	@make -C $(LIB)
+	@$(CC) $(FLAGS) $(LIB)libft.a $(LIBMLX) $(SRCS_O) -o $(NAME)
 
 clean:
-	@make clean -C ./libftprintf
+	@make clean -C $(LIB)
 	@rm -Rf $(SRCS_O)
+	@rm -Rf $(DIR_O)
 
 fclean: clean
-	@make fclean -C ./libftprintf
+	@make fclean -C $(LIB)
 	@make clean -C ./mlx/
-	@rm -Rf ./fdf
+	@rm -Rf $(NAME)
 	
 re: fclean all
-
-g: 
-	@make -C ./mlx/
-	@make -C ./ft_printf/
-	@gcc -Wall -Wextra -Werror -g -Isources/ -Imlx/ $(LIBMLX) $(LIB) $(SRCS_O) -o $(NAME)
-
-c:
-	@make clean -C ./ft_printf/
-	@rm -Rf $(SRCS_O)
-	clear

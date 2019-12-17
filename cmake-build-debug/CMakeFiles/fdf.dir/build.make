@@ -229,7 +229,7 @@ fdf: CMakeFiles/fdf.dir/sources/keyboard.c.o
 fdf: CMakeFiles/fdf.dir/sources/point_list_functions.c.o
 fdf: CMakeFiles/fdf.dir/sources/mouse.c.o
 fdf: CMakeFiles/fdf.dir/build.make
-fdf: ../ft_printf/libftprintf.a
+fdf: ../libft/libft.a
 fdf: ../mlx/libmlx.a
 fdf: CMakeFiles/fdf.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable fdf"

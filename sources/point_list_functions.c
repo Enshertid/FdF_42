@@ -6,11 +6,11 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 23:26:37 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/17 15:55:05 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/17 17:25:25 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 int hex_to_dec(const char *str)
 {
@@ -95,6 +95,7 @@ t_matr			*ft_list_create(int ln, char *line, t_pointers *point)
 	t_matr				*new;
 	__int128_t			num;
 
+	num = 0;
 	if (!(new = malloc(sizeof(t_matr))))
 		ft_error("Error with malloc of list\n", 2);
 	ft_memset(new, 0, sizeof(t_matr));

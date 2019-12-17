@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/ymanilow/curcus42/fdf/mlx -I/Users/ymanilow/curcus42/fdf/sources -I/Users/ymanilow/curcus42/fdf/includes 
+C_INCLUDES = -I/Users/ymanilow/curcus42/fdf/mlx -I/Users/ymanilow/curcus42/fdf/sources -I/Users/ymanilow/curcus42/fdf/includes -I/Users/ymanilow/curcus42/fdf/libft/includes_p -I/Users/ymanilow/curcus42/fdf/libft/includes_l 
 

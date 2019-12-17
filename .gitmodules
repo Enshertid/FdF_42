@@ -1,3 +1,6 @@
 [submodule "libftprintf"]
 	path = libftprintf
 	url = https://github.com/Enshertid/libftprintf
+[submodule "libft"]
+	path = libft
+	url = https://github.com/Enshertid/libft

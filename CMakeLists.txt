@@ -7,6 +7,8 @@ set(CMAKE_C_STANDARD 11)
 include_directories(mlx)
 include_directories(sources)
 include_directories(includes)
+include_directories(libft/includes_p)
+include_directories(libft/includes_l)
 
 
 add_executable(fdf
@@ -24,7 +26,7 @@ add_executable(fdf
         sources/point_list_functions.c
         sources/mouse.c)
 
-target_link_libraries(fdf ${CMAKE_SOURCE_DIR}/ft_printf/libftprintf.a)
+target_link_libraries(fdf ${CMAKE_SOURCE_DIR}/libft/libft.a)
 target_link_libraries(fdf  ${CMAKE_SOURCE_DIR}/mlx/libmlx.a)
 target_link_libraries(fdf "-framework AppKit")
 target_link_libraries(fdf "-framework OpenGL")
