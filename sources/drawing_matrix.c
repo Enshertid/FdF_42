@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 22:34:30 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/17 15:42:45 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/17 19:37:05 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,43 @@ void				ft_draw_matrix_img_iso(t_pointers *p)
 	}
 }
 
+
+void				ft_set_coord(t_pointers *p, t_dot *dot, int j, int i)
+{
+	dot->x = i * p->base.size - p->mtrx.ln_x / 2 * p->base.size;
+	dot->y = j * p->base.size - p->mtrx.ln_y / 2 * p->base.size;
+	dot->z = p->mtrx.array[j][i];
+	ft_check_angle(p, &dot->x, &dot->y, &dot->z);
+	dot->x += p->base.start_x + p->mtrx.ln_x / 2 * p->base.size;
+	dot->y += p->base.start_y + p->mtrx.ln_y / 2 * p->base.size;
+}
+
+void				ft_draw_line_top(t_pointers *p, int j, int i)
+{
+	if (p->mod.grad)
+		ft_print_line_img_grad(p, p->dot_s, p->mtrx.color[j][i], p->mtrx.color[j][i + 1]);
+	else
+	{
+		if (p->mtrx.color[j][i + 1] == p->color.custom_color)
+			ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i + 1]);
+		else
+			ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i]);
+	}
+}
+
+void				ft_draw_line_bot(t_pointers *p, int j, int i)
+{
+	if (p->mod.grad)
+		ft_print_line_img_grad(p, p->dot_s, p->mtrx.color[j][i], p->mtrx.color[j + 1][i]);
+	else
+	{
+		if (p->mtrx.color[j + 1][i] == p->color.custom_color)
+			ft_print_line_img(p, p->dot_s, p->mtrx.color[j + 1][i]);
+		else
+			ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i]);
+	}
+}
+
 void				ft_draw_matrix_img(t_pointers *p)
 {
 	int			i;
@@ -62,48 +99,16 @@ void				ft_draw_matrix_img(t_pointers *p)
 	{
 		while (++i < p->mtrx.ln_x)
 		{
-			p->dot_s.x = i * p->base.size - p->mtrx.ln_x / 2 * p->base.size;
-			p->dot_s.y = j * p->base.size - p->mtrx.ln_y / 2 * p->base.size;
-			p->dot_s.z = p->mtrx.array[j][i];
-			ft_check_angle(p, &p->dot_s.x, &p->dot_s.y, &p->dot_s.z);
-			p->dot_s.x += p->base.start_x + p->mtrx.ln_x / 2 * p->base.size;
-			p->dot_s.y += p->base.start_y + p->mtrx.ln_y / 2 * p->base.size;
+			ft_set_coord(p, &p->dot_s, j, i);
 			if (i != p->mtrx.ln_x - 1)
 			{
-				p->dot_e.y = j * p->base.size - p->mtrx.ln_y / 2 * p->base.size;
-				p->dot_e.x = (i + 1) * p->base.size - p->mtrx.ln_x / 2 * p->base.size;
-				p->dot_e.z = p->mtrx.array[j][i + 1];
-				ft_check_angle(p, &p->dot_e.x, &p->dot_e.y, &p->dot_e.z);
-				p->dot_e.x += p->base.start_x + p->mtrx.ln_x / 2 * p->base.size;
-				p->dot_e.y += p->base.start_y + p->mtrx.ln_y / 2 * p->base.size;
-				if (p->mod.grad)
-					ft_print_line_img_grad(p, p->dot_s, p->mtrx.color[j][i], p->mtrx.color[j][i + 1]);
-				else
-				{
-					if (p->mtrx.color[j][i + 1] == p->color.custom_color)
-						ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i + 1]);
-					else
-						ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i]);
-				}
-
+				ft_set_coord(p, &p->dot_e, j, i + 1);
+				ft_draw_line_top(p, j, i);
 			}
 			if (j != p->mtrx.ln_y - 1)
 			{
-				p->dot_e.x = i * p->base.size - p->mtrx.ln_x / 2 * p->base.size;
-				p->dot_e.y = (j + 1) * p->base.size - p->mtrx.ln_y / 2 * p->base.size;
-				p->dot_e.z = p->mtrx.array[j + 1][i];
-				ft_check_angle(p, &p->dot_e.x, &p->dot_e.y, &p->dot_e.z);
-				p->dot_e.x += p->base.start_x + p->mtrx.ln_x / 2 * p->base.size;
-				p->dot_e.y += p->base.start_y + p->mtrx.ln_y / 2 * p->base.size;
-				if (p->mod.grad)
-					ft_print_line_img_grad(p, p->dot_s, p->mtrx.color[j][i], p->mtrx.color[j + 1][i]);
-				else
-				{
-					if (p->mtrx.color[j + 1][i] == p->color.custom_color)
-						ft_print_line_img(p, p->dot_s, p->mtrx.color[j + 1][i]);
-					else
-						ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i]);
-				}
+				ft_set_coord(p, &p->dot_e, j + 1, i);
+				ft_draw_line_bot(p, j, i);
 			}
 		}
 		i = -1;

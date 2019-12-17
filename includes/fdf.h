@@ -6,7 +6,7 @@
 /*   By: ymanilow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:13:41 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/17 15:55:05 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/17 19:12:20 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,10 @@ typedef struct		s_dot
 	double			r;
 	double			g;
 	double			b;
+	int				lnx;
+	int				lny;
+	int				ln;
+	int				d;
 }					t_dot;
 
 typedef struct		s_pointers
