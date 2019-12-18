@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+../includes/fdf.h
+mlx.h
+../includes/mlx.h
+libft.h
+../includes/libft.h
+math.h
+-
+
 ../libft/includes_l/libft.h
 stdlib.h
 -
@@ -36,7 +44,13 @@ libft.h
 stddef.h
 -
 
-/Users/ymanilow/curcus42/fdf/libft/srcs_l/ft_atoi_base.c
-libft.h
-/Users/ymanilow/curcus42/fdf/libft/srcs_l/libft.h
+../mlx/mlx.h
+
+/Users/ymanilow/curcus42/fdf/sources/fdf.c
+fdf.h
+/Users/ymanilow/curcus42/fdf/sources/fdf.h
+
+/Users/ymanilow/curcus42/fdf/sources/menu.c
+fdf.h
+/Users/ymanilow/curcus42/fdf/sources/fdf.h
 

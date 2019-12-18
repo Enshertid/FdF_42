@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 12:56:45 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/18 13:04:22 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/18 13:05:15 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void				ft_output_of_menu_sizeofcall(t_pointers *point)
 				point->base.start_y + point->base.size * point->mtrx.ln_y,
 				WHITE_F, "FIGURE IS TOO FAR");
 	}
+	free(size);
 }
 
 void				ft_output_of_current_values_of_angles(t_pointers *point)
@@ -77,6 +78,9 @@ void				ft_output_of_current_values_of_angles(t_pointers *point)
 	mlx_string_put(point->mlx_ptr, point->win_ptr, 30,
 			390, WHITE_F, "ANGLE Z : ");
 	mlx_string_put(point->mlx_ptr, point->win_ptr, 150, 390, WHITE_F, z);
+	free(x);
+	free(y);
+	free(z);
 }
 
 void				ft_output_of_menu(t_pointers *point)
