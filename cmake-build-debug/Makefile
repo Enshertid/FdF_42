@@ -123,32 +123,32 @@ fdf/fast:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/build
 .PHONY : fdf/fast
 
-sources/costyl.o: sources/costyl.c.o
+sources/draw_line_with_grad.o: sources/draw_line_with_grad.c.o
 
-.PHONY : sources/costyl.o
+.PHONY : sources/draw_line_with_grad.o
 
 # target to build an object file
-sources/costyl.c.o:
-	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/costyl.c.o
-.PHONY : sources/costyl.c.o
+sources/draw_line_with_grad.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.o
+.PHONY : sources/draw_line_with_grad.c.o
 
-sources/costyl.i: sources/costyl.c.i
+sources/draw_line_with_grad.i: sources/draw_line_with_grad.c.i
 
-.PHONY : sources/costyl.i
+.PHONY : sources/draw_line_with_grad.i
 
 # target to preprocess a source file
-sources/costyl.c.i:
-	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/costyl.c.i
-.PHONY : sources/costyl.c.i
+sources/draw_line_with_grad.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.i
+.PHONY : sources/draw_line_with_grad.c.i
 
-sources/costyl.s: sources/costyl.c.s
+sources/draw_line_with_grad.s: sources/draw_line_with_grad.c.s
 
-.PHONY : sources/costyl.s
+.PHONY : sources/draw_line_with_grad.s
 
 # target to generate assembly for a file
-sources/costyl.c.s:
-	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/costyl.c.s
-.PHONY : sources/costyl.c.s
+sources/draw_line_with_grad.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.s
+.PHONY : sources/draw_line_with_grad.c.s
 
 sources/draw_matrix_on_iso.o: sources/draw_matrix_on_iso.c.o
 
@@ -510,9 +510,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fdf"
-	@echo "... sources/costyl.o"
-	@echo "... sources/costyl.i"
-	@echo "... sources/costyl.s"
+	@echo "... sources/draw_line_with_grad.o"
+	@echo "... sources/draw_line_with_grad.i"
+	@echo "... sources/draw_line_with_grad.s"
 	@echo "... sources/draw_matrix_on_iso.o"
 	@echo "... sources/draw_matrix_on_iso.i"
 	@echo "... sources/draw_matrix_on_iso.s"

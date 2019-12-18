@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/fdf.dir/sources/costyl.c.o"
+  "CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.o"
   "CMakeFiles/fdf.dir/sources/draw_matrix_on_iso.c.o"
   "CMakeFiles/fdf.dir/sources/drawing_lines.c.o"
   "CMakeFiles/fdf.dir/sources/drawing_matrix.c.o"

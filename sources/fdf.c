@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:58:38 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/18 12:56:17 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/18 14:14:37 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int					ft_free_exit(t_pointers *point)
 int					main(int ac, char **av)
 {
 	t_pointers		point;
-	
+
 	ft_memset(&point, 0, sizeof(t_pointers));
 	ft_parsing(&point, ac, av);
 	ft_set_dot(&point);

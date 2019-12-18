@@ -200,18 +200,18 @@ CMakeFiles/fdf.dir/sources/mouse.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/sources/mouse.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ymanilow/curcus42/fdf/sources/mouse.c -o CMakeFiles/fdf.dir/sources/mouse.c.s
 
-CMakeFiles/fdf.dir/sources/costyl.c.o: CMakeFiles/fdf.dir/flags.make
-CMakeFiles/fdf.dir/sources/costyl.c.o: ../sources/costyl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/fdf.dir/sources/costyl.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/sources/costyl.c.o   -c /Users/ymanilow/curcus42/fdf/sources/costyl.c
+CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.o: CMakeFiles/fdf.dir/flags.make
+CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.o: ../sources/draw_line_with_grad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.o   -c /Users/ymanilow/curcus42/fdf/sources/draw_line_with_grad.c
 
-CMakeFiles/fdf.dir/sources/costyl.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/sources/costyl.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ymanilow/curcus42/fdf/sources/costyl.c > CMakeFiles/fdf.dir/sources/costyl.c.i
+CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ymanilow/curcus42/fdf/sources/draw_line_with_grad.c > CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.i
 
-CMakeFiles/fdf.dir/sources/costyl.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/sources/costyl.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ymanilow/curcus42/fdf/sources/costyl.c -o CMakeFiles/fdf.dir/sources/costyl.c.s
+CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ymanilow/curcus42/fdf/sources/draw_line_with_grad.c -o CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.s
 
 CMakeFiles/fdf.dir/sources/draw_matrix_on_iso.c.o: CMakeFiles/fdf.dir/flags.make
 CMakeFiles/fdf.dir/sources/draw_matrix_on_iso.c.o: ../sources/draw_matrix_on_iso.c
@@ -252,7 +252,7 @@ fdf_OBJECTS = \
 "CMakeFiles/fdf.dir/sources/keyboard.c.o" \
 "CMakeFiles/fdf.dir/sources/point_list_functions.c.o" \
 "CMakeFiles/fdf.dir/sources/mouse.c.o" \
-"CMakeFiles/fdf.dir/sources/costyl.c.o" \
+"CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.o" \
 "CMakeFiles/fdf.dir/sources/draw_matrix_on_iso.c.o" \
 "CMakeFiles/fdf.dir/sources/menu.c.o"
 
@@ -270,7 +270,7 @@ fdf: CMakeFiles/fdf.dir/sources/work_with_angle_consistent.c.o
 fdf: CMakeFiles/fdf.dir/sources/keyboard.c.o
 fdf: CMakeFiles/fdf.dir/sources/point_list_functions.c.o
 fdf: CMakeFiles/fdf.dir/sources/mouse.c.o
-fdf: CMakeFiles/fdf.dir/sources/costyl.c.o
+fdf: CMakeFiles/fdf.dir/sources/draw_line_with_grad.c.o
 fdf: CMakeFiles/fdf.dir/sources/draw_matrix_on_iso.c.o
 fdf: CMakeFiles/fdf.dir/sources/menu.c.o
 fdf: CMakeFiles/fdf.dir/build.make

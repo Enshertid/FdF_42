@@ -26,7 +26,8 @@ add_executable(fdf
         sources/point_list_functions.c
         sources/mouse.c
         sources/draw_line_with_grad.c
-        sources/draw_matrix_on_iso.c sources/menu.c)
+        sources/draw_matrix_on_iso.c
+        sources/menu.c)
 
 target_link_libraries(fdf ${CMAKE_SOURCE_DIR}/libft/libft.a)
 target_link_libraries(fdf  ${CMAKE_SOURCE_DIR}/mlx/libmlx.a)
