@@ -37,6 +37,12 @@ CMakeFiles/fdf.dir/sources/keyboard.c.o
  ../libft/includes_p/ft_printf.h
  ../mlx/mlx.h
  /Users/ymanilow/curcus42/fdf/sources/keyboard.c
+CMakeFiles/fdf.dir/sources/menu.c.o
+ ../includes/fdf.h
+ ../libft/includes_l/libft.h
+ ../libft/includes_p/ft_printf.h
+ ../mlx/mlx.h
+ /Users/ymanilow/curcus42/fdf/sources/menu.c
 CMakeFiles/fdf.dir/sources/mouse.c.o
  ../includes/fdf.h
  ../libft/includes_l/libft.h

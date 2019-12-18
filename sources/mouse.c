@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 17:28:24 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/16 17:28:24 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:10:33 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ void				ft_movement(t_pointers *point, int x, int y)
 	else
 		ft_draw_matrix_img_iso(point);
 	mlx_put_image_to_window(point->mlx_ptr, point->win_ptr, point->img.img_ptr, 0, 0);
+	if (point->mod.tab)
+		ft_output_of_menu(point);
+	point->mouse.x = x;
+	point->mouse.y = y;
 }
 
 void				ft_angle_movement(t_pointers *point, int x, int y)
@@ -44,6 +48,7 @@ void				ft_angle_movement(t_pointers *point, int x, int y)
 	else if (point->mouse.y > y && !point->mod.shift)
 		point->angle.angle_x -= ANGLE_MOUSE;
 	ft_set_angles(point);
+	ft_change_angle(point,0);
 	ft_memset(point->img.char_ptr, 0, point->img.ln_size * HEIGHT);
 	mlx_clear_window(point->mlx_ptr, point->win_ptr);
 	if (!point->mod.iso)
@@ -51,6 +56,8 @@ void				ft_angle_movement(t_pointers *point, int x, int y)
 	else
 		ft_draw_matrix_img_iso(point);
 	mlx_put_image_to_window(point->mlx_ptr, point->win_ptr, point->img.img_ptr, 0, 0);
+	if (point->mod.tab)
+		ft_output_of_menu(point);
 	point->mouse.x = x;
 	point->mouse.y = y;
 }

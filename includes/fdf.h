@@ -6,7 +6,7 @@
 /*   By: ymanilow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:13:41 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/17 20:59:08 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:53:07 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define RIGHT 124
 # define FALL 33
 # define I 34
-# define O 31
+# define TAB 48
 # define Y_LEFT 86
 # define Y_RIGHT 88
 # define X_DOWN 84
@@ -47,6 +47,8 @@
 # define TURQUOISE_F 0x33FFFF
 # define ANGLE_MOUSE 0.0872665
 # define ANGLE 0.174533
+# define MENU_Y 400
+# define PI 3.1416
 
 # include "mlx.h"
 # include "libft.h"
@@ -94,9 +96,9 @@ typedef struct		s_angle
 	double			x_y;
 	double			y_y;
 	double			z_y;
-	double			x_z;
-	double			y_z;
-	double			z_z;
+	int				anx;
+	int				any;
+	int				anz;
 }					t_angle;
 
 typedef struct		s_color
@@ -114,6 +116,8 @@ typedef struct		t_base
 	int				z_min;
 	int				start_x;
 	int				start_y;
+	int				w;
+	int				h;
 }					t_base;
 
 typedef struct		s_mouse
@@ -131,6 +135,7 @@ typedef struct		s_mod
 	t_bool			shift;
 	t_bool			grad;
 	t_bool			iso;
+	t_bool			tab;
 }					t_mod;
 
 typedef struct		s_dot
@@ -141,10 +146,6 @@ typedef struct		s_dot
 	double			r;
 	double			g;
 	double			b;
-	int				lnx;
-	int				lny;
-	int				ln;
-	int				d;
 }					t_dot;
 
 typedef struct		s_pointers
@@ -198,10 +199,13 @@ void				ft_funct_for_draw(t_pointers *p, int color_s,
 										int color_e, t_dot *dot_s);
 void				ft_cycle_cost(t_pointers *p, t_dot *dot_s);
 int					ft_costylishe(t_pointers *p, int *lnx, int *lny, int *ln);
+void				ft_draw_line_top(t_pointers *p, int j, int i);
+void				ft_draw_line_bot(t_pointers *p, int j, int i);
 
 void				ft_movement(t_pointers *point, int x, int y);
 void				ft_angle_movement(t_pointers *point, int x, int y);
 void				ft_check_key(t_pointers *point, int key);
+void				ft_output_of_menu(t_pointers *point);
 
 
 #endif

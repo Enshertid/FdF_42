@@ -6,13 +6,14 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 22:31:04 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/17 20:58:21 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/17 22:51:23 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void				ft_cycle_of_print(t_pointers *p, t_dot dot, int ln, int color)
+void				ft_cycle_of_print(t_pointers *p, t_dot dot,
+										int ln, int color)
 {
 	int		lnx;
 	int		lny;
@@ -35,7 +36,7 @@ void				ft_cycle_of_print(t_pointers *p, t_dot dot, int ln, int color)
 				dot.x += p->dot_e.x - dot.x >= 0 ? 1 : -1;
 			d -= lny <= lnx ? 2 * lnx : 2 * lny;
 		}
-		if (dot.x >= WIDTH || dot.x < 0 || dot.y >= HEIGHT || dot.y < 0)
+		if (dot.x >= WIDTH || dot.x < p->base.w || dot.y >= HEIGHT || dot.y < 0)
 			continue ;
 		*(int*)(p->img.char_ptr + p->img.ln_size * dot.y + dot.x * 4) = color;
 	}
@@ -49,8 +50,9 @@ void				ft_print_line_img(t_pointers *p, t_dot dot, int color)
 	lnx = ft_mod_num(p->dot_e.x - dot.x);
 	lny = ft_mod_num(p->dot_e.y - dot.y);
 	ln = ft_max(lnx, lny) + 1;
-	if (dot.x < HEIGHT && p->dot_e.x < HEIGHT && dot.x >= 0 && p->dot_e.x >= 0 &&
-		dot.y < WIDTH && p->dot_e.y < WIDTH && dot.y >= 0 && p->dot_e.y >= 0)
+	if (dot.x < WIDTH && p->dot_e.x < WIDTH && dot.x >= p->base.w &&
+		p->dot_e.x >= p->base.w && dot.y < HEIGHT && p->dot_e.y < HEIGHT
+		&& dot.y >= 0 && p->dot_e.y >= 0)
 		*(int*)(p->img.char_ptr + p->img.ln_size * dot.y + dot.x * 4) = color;
 	ft_cycle_of_print(p, dot, ln, color);
 }

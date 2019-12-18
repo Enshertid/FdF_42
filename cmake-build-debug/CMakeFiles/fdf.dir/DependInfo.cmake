@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/ymanilow/curcus42/fdf/sources/drawing_matrix.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/drawing_matrix.c.o"
   "/Users/ymanilow/curcus42/fdf/sources/fdf.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/fdf.c.o"
   "/Users/ymanilow/curcus42/fdf/sources/keyboard.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/keyboard.c.o"
+  "/Users/ymanilow/curcus42/fdf/sources/menu.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/menu.c.o"
   "/Users/ymanilow/curcus42/fdf/sources/mouse.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/mouse.c.o"
   "/Users/ymanilow/curcus42/fdf/sources/parsing.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/parsing.c.o"
   "/Users/ymanilow/curcus42/fdf/sources/point_functions.c" "/Users/ymanilow/curcus42/fdf/cmake-build-debug/CMakeFiles/fdf.dir/sources/point_functions.c.o"

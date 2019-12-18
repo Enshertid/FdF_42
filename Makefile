@@ -27,7 +27,8 @@ FLAGS = -Wall -Wextra -Werror -I$(DIR_H) -I$(LIB)includes_l -I$(LIB)includes_p
 SRCS_C = fdf.c	parsing.c	work_with_angle_consistent.c				\
 	point_functions.c	drawing_lines.c	drawing_matrix.c				\
 	treatment_of_signals.c	work_with_angles.c	point_list_functions.c	\
-	keyboard.c mouse.c													\
+	keyboard.c mouse.c	draw_matrix_on_iso.c	draw_line_with_grad.c	\
+	menu.c																\
 
 SRCS_O = $(addprefix $(DIR_O)/,$(SRCS_C:.c=.o))
 

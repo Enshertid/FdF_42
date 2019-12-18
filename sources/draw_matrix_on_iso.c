@@ -6,11 +6,21 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/17 21:03:12 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/17 21:14:27 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/17 22:12:34 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void				ft_set_coor_iso(t_pointers *p, t_dot *dot, int j, int i)
+{
+	dot->x = i * p->base.size;
+	dot->y = j * p->base.size;
+	dot->z = p->mtrx.array[j][i];
+	ft_iso(&dot->x, &dot->y, dot->z, p);
+	dot->x += p->base.start_x;
+	dot->y += p->base.start_y;
+}
 
 void				ft_draw_matrix_img_iso(t_pointers *p)
 {
@@ -23,34 +33,16 @@ void				ft_draw_matrix_img_iso(t_pointers *p)
 	{
 		while (++i < p->mtrx.ln_x)
 		{
-			p->dot_s.x = i * p->base.size + p->base.start_x;
-			p->dot_s.y = j * p->base.size + p->base.start_y;
-			ft_iso(&p->dot_s.x, &p->dot_s.y, p->mtrx.array[j][i], p);
-			p->dot_s.x += p->base.start_x + p->mtrx.ln_x / 2 * p->base.size;
-			p->dot_s.y += p->base.start_y + p->mtrx.ln_y / 2 * p->base.size;
+			ft_set_coor_iso(p, &p->dot_s,j ,i);
 			if (i != p->mtrx.ln_x - 1)
 			{
-				p->dot_e.y = j * p->base.size + p->base.start_y;
-				p->dot_e.x = (i + 1) * p->base.size + p->base.start_x;
-				ft_iso(&p->dot_e.x, &p->dot_e.y, p->mtrx.array[j][i + 1], p);
-				p->dot_e.y += p->base.start_x + p->mtrx.ln_x / 2 * p->base.size;
-				p->dot_e.x += p->base.start_y + p->mtrx.ln_y / 2 * p->base.size;
-				if (p->mtrx.array[j][i] != p->base.z_min || p->mtrx.array[j][i + 1] != p->base.z_min)
-					ft_print_line_img_grad(p,p->dot_s, p->mtrx.color[j][i], p->mtrx.color[j][i + 1]);
-				else
-					ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i]);
+				ft_set_coor_iso(p, &p->dot_e, j ,i + 1);
+				ft_draw_line_top(p, j, i);
 			}
 			if (j != p->mtrx.ln_y - 1)
 			{
-				p->dot_e.x = i * p->base.size + p->base.start_x;
-				p->dot_e.y = (j + 1) * p->base.size + p->base.start_y;
-				ft_iso(&p->dot_e.x, &p->dot_e.y, p->mtrx.array[j + 1][i], p);
-				p->dot_e.y += p->base.start_x + p->mtrx.ln_x / 2 * p->base.size;
-				p->dot_e.x += p->base.start_y + p->mtrx.ln_y / 2 * p->base.size;
-				if (p->mtrx.array[j][i] != p->base.z_min || p->mtrx.array[j + 1][i] != p->base.z_min)
-					ft_print_line_img_grad(p, p->dot_s,p->mtrx.color[j][i], p->mtrx.color[j+ 1][i]);
-				else
-					ft_print_line_img(p, p->dot_s, p->mtrx.color[j][i]);
+				ft_set_coor_iso(p, &p->dot_e, j + 1 ,i);
+				ft_draw_line_bot(p, j, i);
 			}
 		}
 		i = -1;

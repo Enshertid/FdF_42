@@ -285,6 +285,33 @@ sources/keyboard.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/keyboard.c.s
 .PHONY : sources/keyboard.c.s
 
+sources/menu.o: sources/menu.c.o
+
+.PHONY : sources/menu.o
+
+# target to build an object file
+sources/menu.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/menu.c.o
+.PHONY : sources/menu.c.o
+
+sources/menu.i: sources/menu.c.i
+
+.PHONY : sources/menu.i
+
+# target to preprocess a source file
+sources/menu.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/menu.c.i
+.PHONY : sources/menu.c.i
+
+sources/menu.s: sources/menu.c.s
+
+.PHONY : sources/menu.s
+
+# target to generate assembly for a file
+sources/menu.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/sources/menu.c.s
+.PHONY : sources/menu.c.s
+
 sources/mouse.o: sources/mouse.c.o
 
 .PHONY : sources/mouse.o
@@ -501,6 +528,9 @@ help:
 	@echo "... sources/keyboard.o"
 	@echo "... sources/keyboard.i"
 	@echo "... sources/keyboard.s"
+	@echo "... sources/menu.o"
+	@echo "... sources/menu.i"
+	@echo "... sources/menu.s"
 	@echo "... sources/mouse.o"
 	@echo "... sources/mouse.i"
 	@echo "... sources/mouse.s"

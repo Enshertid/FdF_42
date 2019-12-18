@@ -6,7 +6,7 @@
 /*   By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 22:53:56 by ymanilow          #+#    #+#             */
-/*   Updated: 2019/12/17 15:55:05 by ymanilow         ###   ########.fr       */
+/*   Updated: 2019/12/18 11:46:04 by ymanilow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,9 @@ void				ft_key_pointers(t_pointers *point, int key)
 		d = -1;
 	else
 		d = 1;
-	if ((key == LEFT || key == RIGHT) && point->mod.iso)
-	{
+	if ((key == LEFT || key == RIGHT))
 		point->base.start_x += 10 * d;
-		point->base.start_y -= 10 * d;
-	}
-	else if ((key == LEFT || key == RIGHT) && !point->mod.iso)
-		point->base.start_x += 10 * d;
-	if ((key == DOWN || key == UP) && point->mod.iso)
-	{
-		point->base.start_x += 10 * d;
-		point->base.start_y += 10 * d;
-	}
-	else if ((key == DOWN || key == UP) && !point->mod.iso)
+	else if ((key == DOWN || key == UP))
 		point->base.start_y += 20 * d;
 }
 
@@ -58,7 +48,7 @@ void				ft_key_change(t_pointers *point, int key)
 	else if (key == C)
 	{
 		point->base.start_x = WIDTH / 2;
-		point->base.start_y = -HEIGHT / 3;
+		point->base.start_y = HEIGHT / 3;
 	}
 	if (key == RISE)
 		point->base.z_p += 2;
@@ -90,6 +80,27 @@ void				ft_change_color(t_pointers *point)
 	}
 }
 
+void				ft_set_tab(t_pointers *point, int key)
+{
+	if (key == TAB)
+	{
+		point->mod.tab = !point->mod.tab;
+		if (point->mod.tab)
+			point->base.w = MENU_Y;
+		else
+			point->base.w = 0;
+	}
+	else
+	{
+		point->mod.iso = !point->mod.iso;
+		if (point->mod.iso)
+		{
+			point->base.start_x = WIDTH / 2;
+			point->base.start_y = HEIGHT / 3;
+		}
+	}
+}
+
 void				ft_check_key(t_pointers *point, int key)
 {
 	if (key == ESC)
@@ -106,12 +117,10 @@ void				ft_check_key(t_pointers *point, int key)
 	if (key == Y_LEFT || key == Y_RIGHT || key == X_DOWN || key == X_UP ||
 		key == Z_DOWN || key == Z_UP)
 		ft_change_angle(point, key);
-	if (key == O)
-		point->mod.iso = FALSE;
-	if (key == I)
-		point->mod.iso = TRUE;
 	if (key == G)
 		point->mod.grad = !point->mod.grad;
 	if (key == SHIFT)
-		point->mod.shift = TRUE;
+		point->mod.shift = !point->mod.shift;
+	if (key == TAB || key == I)
+		ft_set_tab(point, key);
 }
