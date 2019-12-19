@@ -6,7 +6,7 @@
 #    By: ymanilow <ymanilow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 10:58:26 by ymanilow          #+#    #+#              #
-#    Updated: 2019/12/17 18:47:10 by ymanilow         ###   ########.fr        #
+#    Updated: 2019/12/19 18:38:50 by ymanilow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ $(DIR_O)/%.o: $(DIR_S)/%.c
 $(NAME): $(SRCS_O)
 	@make -C ./mlx/
 	@make -C $(LIB)
-	@$(CC) $(FLAGS) $(LIB)libft.a $(LIBMLX) $(SRCS_O) -o $(NAME)
+	$(CC) $(FLAGS) $(LIB)libft.a $(LIBMLX) $(SRCS_O) -o $(NAME)
 
 clean:
 	@make clean -C $(LIB)
