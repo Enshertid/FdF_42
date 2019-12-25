@@ -46,11 +46,7 @@ stddef.h
 
 ../mlx/mlx.h
 
-/Users/ymanilow/curcus42/fdf/sources/fdf.c
-fdf.h
-/Users/ymanilow/curcus42/fdf/sources/fdf.h
-
-/Users/ymanilow/curcus42/fdf/sources/menu.c
+/Users/ymanilow/curcus42/fdf/sources/keyboard.c
 fdf.h
 /Users/ymanilow/curcus42/fdf/sources/fdf.h
 
